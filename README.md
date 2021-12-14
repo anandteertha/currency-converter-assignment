@@ -7,9 +7,9 @@ The aim is for you to become aware of some of the technologies that the team is 
 
 This will only be a front-end application and no need to create back-end i.e., server-side code. 
 
-The assignments have some ‘nice to have’ features that would be additional points for you to practice and are not mandatory. We value your time, and we understand that you would be occupied with your college assignments and exams. 
+The assignments have some **'nice to have'** features that would be additional points for you to practice and **are not mandatory**. We value your time, and we understand that you would be occupied with your college assignments and exams. 
 
-## Note: - You are not going to be assessed in any way based on this assignment. It is just to get you curious about the exciting work that we are doing and lots of opportunities for you to learn.
+**Note: - You are not going to be assessed in any way based on this assignment. It is just to get you curious about the exciting work that we are doing and lots of opportunities for you to learn.**
 
 The technologies that are to be used for this assignment are: 
 
@@ -27,38 +27,38 @@ The tutorials you can use for these technologies are:
 Of course, you can refer to other documents as well, but we use these documentations to learn Angular. 
 In case of any questions or queries, please feel free to contact us. 
 
-**Assignment:**
+## Assignment:
 
 This application will be used to store data for currencies and to compare the value of different currencies. 
 
-## Users of the application are:
+### Users of the application are:
   1. Operator 
   2. Consumer 
 
 These users will login through a Sign In page, the first page of the application. Credentials can be hardcoded, no need for backend. There can be an option to select user type on this page.  
-
-## An Operator can:
+***
+### An Operator can:
 
   1. Login to the application. 
   2. View the list of currencies on Currency List Page.  
   3. Add a new Currency. 
   4. Edit existing Currency. 
   5. Delete existing Currency. 
-
-## A Consumer can:
+***
+### A Consumer can:
 
   1. Login to the application. 
   2. Search details of a currency by name of currency or name of country. 
   3. Compare different currency values against each other. 
-
-## Details of currency to be stored:
+***
+### Details of currency to be stored:
 
   1. Name of currency 
   2. Country where the currency is used (one country if the currency is used in multiple countries). 
   3. Value of the currency against USD.  
   4. (optional) Symbol/image of the currency. 
-
-## Pages/features to be included in the application: 
+***
+### Pages/features to be included in the application: 
 
   #### 1. Sign In page 
 
@@ -136,15 +136,18 @@ These users will login through a Sign In page, the first page of the application
 
   ### NOTE:  
 
-    1. Provide navigation between pages for each user type. For example, a consumer user should be able to navigate between search and compare, if these features are on different pages.  
+    1. Provide navigation between pages for each user type. 
+        For example, a consumer user should be able to navigate between search and compare, if these features are on different pages.  
     2. Values need not be accurate.  
     3. You can use your creativity for designing various components and the way features are accessed.  
     4. Can hardcode some amount of data, so that the application is not empty each time it is started. 
-    5. Nice to have features are:  
-    6. Filtering the Currency List to display currencies with value lower or higher than USD. 
-    7. Sorting the Currency List columns in ascending and descending order.  
-    8. Validations for input fields. Such as while adding a new currency, if a currency with the provided name is already present, display a message to the user.  
-
+  
+  ### Nice to have features are:  
+    1. Filtering the Currency List to display currencies with value lower or higher than USD. 
+    2. Sorting the Currency List columns in ascending and descending order.  
+    3. Validations for input fields. 
+        Such as while adding a new currency, if a currency with the provided name is already present, display a message to the user.  
+***
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
