@@ -1,93 +1,170 @@
-# Currency Converter
+# CurrencyConverter
+  `This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.0.`
 
-This application will be used to store data for currencies and to compare the value of different currencies.
+We have a fun practice assignment for you. 
 
-## Getting started
+The aim is for you to become aware of some of the technologies that the team is using and things you would need to learn once you join in. This assignment is just for you to practice and get a general idea of the technologies we use. You will be learning about these technologies in detail through our in-house training once you join. 
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+This will only be a front-end application and no need to create back-end i.e., server-side code. 
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+The assignments have some ‘nice to have’ features that would be additional points for you to practice and are not mandatory. We value your time, and we understand that you would be occupied with your college assignments and exams. 
 
-## Add your files
+## Note: - You are not going to be assessed in any way based on this assignment. It is just to get you curious about the exciting work that we are doing and lots of opportunities for you to learn.
 
-- [ ] [Create](https://gitlab.com/-/experiment/new_project_readme_content:3ee176eaf208600ee4cf998346db4282?https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://gitlab.com/-/experiment/new_project_readme_content:3ee176eaf208600ee4cf998346db4282?https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://gitlab.com/-/experiment/new_project_readme_content:3ee176eaf208600ee4cf998346db4282?https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+The technologies that are to be used for this assignment are: 
 
-```
-cd existing_repo
-git remote add origin https://gitlab.com/nvent-training/new-hires-2022/currency-converter.git
-git branch -M main
-git push -uf origin main
-```
+1. HTML 
+2. CSS3 
+3. Typescript 
+4. Angular 12 
+5. Bootstrap / Prime Ng / Angular Material 
 
-## Integrate with your tools
+The tutorials you can use for these technologies are:  
 
-- [ ] [Set up project integrations](https://gitlab.com/-/experiment/new_project_readme_content:3ee176eaf208600ee4cf998346db4282?https://gitlab.com/nvent-training/new-hires-2022/currency-converter/-/settings/integrations)
+1. https://angular.io/tutorial  
+2. https://codecraft.tv/courses/angular/quickstart/overview/ 
 
-## Collaborate with your team
+Of course, you can refer to other documents as well, but we use these documentations to learn Angular. 
+In case of any questions or queries, please feel free to contact us. 
 
-- [ ] [Invite team members and collaborators](https://gitlab.com/-/experiment/new_project_readme_content:3ee176eaf208600ee4cf998346db4282?https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://gitlab.com/-/experiment/new_project_readme_content:3ee176eaf208600ee4cf998346db4282?https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://gitlab.com/-/experiment/new_project_readme_content:3ee176eaf208600ee4cf998346db4282?https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://gitlab.com/-/experiment/new_project_readme_content:3ee176eaf208600ee4cf998346db4282?https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Automatically merge when pipeline succeeds](https://gitlab.com/-/experiment/new_project_readme_content:3ee176eaf208600ee4cf998346db4282?https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+**Assignment:**
 
-## Test and Deploy
+This application will be used to store data for currencies and to compare the value of different currencies. 
 
-Use the built-in continuous integration in GitLab.
+## Users of the application are:
+  1. Operator 
+  2. Consumer 
 
-- [ ] [Get started with GitLab CI/CD](https://gitlab.com/-/experiment/new_project_readme_content:3ee176eaf208600ee4cf998346db4282?https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://gitlab.com/-/experiment/new_project_readme_content:3ee176eaf208600ee4cf998346db4282?https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://gitlab.com/-/experiment/new_project_readme_content:3ee176eaf208600ee4cf998346db4282?https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://gitlab.com/-/experiment/new_project_readme_content:3ee176eaf208600ee4cf998346db4282?https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://gitlab.com/-/experiment/new_project_readme_content:3ee176eaf208600ee4cf998346db4282?https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+These users will login through a Sign In page, the first page of the application. Credentials can be hardcoded, no need for backend. There can be an option to select user type on this page.  
 
-***
+## An Operator can:
 
-# Editing this README
+  1. Login to the application. 
+  2. View the list of currencies on Currency List Page.  
+  3. Add a new Currency. 
+  4. Edit existing Currency. 
+  5. Delete existing Currency. 
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!).  Thank you to [makeareadme.com](https://gitlab.com/-/experiment/new_project_readme_content:3ee176eaf208600ee4cf998346db4282?https://www.makeareadme.com/) for this template.
+## A Consumer can:
 
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+  1. Login to the application. 
+  2. Search details of a currency by name of currency or name of country. 
+  3. Compare different currency values against each other. 
 
-## Name
-Choose a self-explaining name for your project.
+## Details of currency to be stored:
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+  1. Name of currency 
+  2. Country where the currency is used (one country if the currency is used in multiple countries). 
+  3. Value of the currency against USD.  
+  4. (optional) Symbol/image of the currency. 
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+## Pages/features to be included in the application: 
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+  #### 1. Sign In page 
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+    - This page should verify users. Users should only be able to access features of the app that they are authorized to do. For example, a consumer should not be able to add or delete a currency. 
+    - User type input (dropdown/ radio button, etc.) 
+    - Email/ Phone/ Username (Identification input) 
+    - Password 
+    - Sign In button 
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+  #### 2. Currency List Page 
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+    - Should display all details of all the stored currencies.  
+    - Should have Edit and Delete button for each currency. 
+    - Edit button should take user to Edit currency page/form. 
+    - The Delete button should delete that currency. 
+    - Should have Add New Currency button, which will take user to Add Currency page. 
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+  #### 3. Add Currency 
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+    - Should display a form with input fields for: 
+    - Name of currency 
+    - Country where the currency is used (one country if the currency is used in multiple countries). 
+    - Value of the currency against USD.  
+    - (optional) Symbol/image of the currency. 
+    - Should have a submit and a cancel button. 
+    - The form can be submitted if all the values are provided.  
+    - Submit button should  
+    - Submit the form 
+    - Add the currency details to memory 
+    - Redirect the user to Currency List Page where the newly added currency can be viewed.   
+    - Cancel button should redirect the user to the Currency List Page. 
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+  #### 3. Edit Currency 
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+    - Should display a form with input fields for: 
+    - Name of currency 
+    - Country where the currency is used (one country if the currency is used in multiple countries). 
+    - Value of the currency against USD.  
+    - (optional) Symbol/image of the currency. 
+    - These input fields should be populated with the details of the currency which the user wanted to edit on the Currency List Page. 
+    - Should have a submit and a cancel button. 
+    - The form can be submitted if all the values are provided.  
+    - Submit button should  
+    - Submit the form 
+    - Add the currency details to memory 
+    - Redirect the user to Currency List Page where the newly added currency can be viewed.   
+    - Cancel button should redirect the user to the Currency List Page. 
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+  #### 4. Delete Currency 
 
-## License
-For open source projects, say how it is licensed.
+    - Delete the targeted currency’s details. 
+    - The deleted currency should no longer appear in the Currency List Page.  
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+  #### 5. Search Currency 
 
+    - Provide the user with a search bar. 
+    - Input can be  
+    - Currency name, such as ‘dollar,’ ‘euro,’ ‘pound,’ etc. 
+    - Country name, such as ‘India,’ ‘China,’ ‘USA,’ etc.  
+    - Can have a ‘Go’ button next to the search bar. 
+    - On pressing the Go button, display the search result. 
+    - If a currency with the name or country is found, display all its details. 
+    - If a currency is not found, display a message to the user.  
+
+  #### 6. Compare Currency 
+
+    - Should have two fields for searching/ choosing the currency. (May use dropdown inputs) 
+    - Should have a Compare button. 
+    - On clicking the Compare button, if both currency fields are set, display the following: 
+    - Value of each currency against USD 
+    - The value of the weaker currency against the stronger. 
+        For example, a user selects INR and Pound Sterling and clicks compare, the user should be provided with the following information: 
+        1 INR = 0.013 USD, 1 Pound = 1.32 USD 
+        1 Pound = 99.91 INR 
+
+  ### NOTE:  
+
+    1. Provide navigation between pages for each user type. For example, a consumer user should be able to navigate between search and compare, if these features are on different pages.  
+    2. Values need not be accurate.  
+    3. You can use your creativity for designing various components and the way features are accessed.  
+    4. Can hardcode some amount of data, so that the application is not empty each time it is started. 
+    5. Nice to have features are:  
+    6. Filtering the Currency List to display currencies with value lower or higher than USD. 
+    7. Sorting the Currency List columns in ascending and descending order.  
+    8. Validations for input fields. Such as while adding a new currency, if a currency with the provided name is already present, display a message to the user.  
+
+## Development server
+
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## Code scaffolding
+
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+
+## Build
+
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+
+## Running unit tests
+
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+## Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
