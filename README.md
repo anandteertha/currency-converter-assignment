@@ -1,31 +1,4 @@
-# CurrencyConverter
-  `This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.0.`
-
-We have a fun practice assignment for you. 
-
-The aim is for you to become aware of some of the technologies that the team is using and things you would need to learn once you join in. This assignment is just for you to practice and get a general idea of the technologies we use. You will be learning about these technologies in detail through our in-house training once you join. 
-
-This will only be a front-end application and no need to create back-end i.e., server-side code. 
-
-The assignments have some **'nice to have'** features that would be additional points for you to practice and **are not mandatory**. We value your time, and we understand that you would be occupied with your college assignments and exams. 
-
-**Note: - You are not going to be assessed in any way based on this assignment. It is just to get you curious about the exciting work that we are doing and lots of opportunities for you to learn.**
-
-The technologies that are to be used for this assignment are: 
-
-1. HTML 
-2. CSS3 
-3. Typescript 
-4. Angular 12 
-5. Bootstrap / Prime Ng / Angular Material 
-
-The tutorials you can use for these technologies are:  
-
-1. https://angular.io/tutorial  
-2. https://codecraft.tv/courses/angular/quickstart/overview/ 
-
-Of course, you can refer to other documents as well, but we use these documentations to learn Angular. 
-In case of any questions or queries, please feel free to contact us. 
+# Currency Converter
 
 ## Assignment:
 
@@ -142,32 +115,8 @@ These users will login through a Sign In page, the first page of the application
     3. You can use your creativity for designing various components and the way features are accessed.  
     4. Can hardcode some amount of data, so that the application is not empty each time it is started. 
   
-  ### Nice to have features are:  
+  ### Nice to have features are (not mandatory):  
     1. Filtering the Currency List to display currencies with value lower or higher than USD. 
     2. Sorting the Currency List columns in ascending and descending order.  
     3. Validations for input fields. 
         Such as while adding a new currency, if a currency with the provided name is already present, display a message to the user.  
-***
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
