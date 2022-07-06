@@ -1,0 +1,207 @@
+body {
+  margin:0px;
+  height:100%;
+  font-family: 'Playfair Display';
+  font-family: 'Hammersmith One';
+  font-size: 20px;
+  color: #D7E0EB;
+  background-color: #253439;
+}
+.navbar {
+  width: 100%;
+  overflow: auto;
+  background-color: #253439;
+}
+.navbar a {
+  float: left;
+  color: white;
+  text-decoration: none;
+  width: 22%;
+  text-align: center;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  opacity: 0.3;
+}
+.navbar a:hover {
+    color: white;
+    font-size: 25px;
+    background-color: #243539;
+    opacity: 1;
+}
+.navbar:hover {
+  opacity: 1;
+  text-weight: bold;
+}
+.navbar a.active {
+  background-color: #243539;
+}
+
+/*  @media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+    width: 100%;
+    text-align: left; /* If you want the text to be left-aligned on small screens */
+/*  }
+} */
+.main {
+  margin-top: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
+  width: 80%;
+  border: 1px solid #D7E0EB;
+  border-opacity: 0.2;
+  overflow-y: auto;
+  padding-left: 2%;
+  padding-right: 2%;
+  box-sizing: border-box;
+}
+.search {
+  margin-top: 1%;
+  margin-left: 25%;
+  margin-right: 2%;
+  margin-bottom: 2%;
+  width: 45%;
+  border: 1px solid #D7E0EB;
+  border-opacity: 0.2;
+  padding-left: 2%;
+  padding-right: 2%;
+  height: 40px;
+  float: left;
+  border-radius: 6vh;
+}
+.currency {
+  width: 96%;
+  height: 15%;
+  //border: 1px solid black;
+  margin-top: 2%;
+  padding: 2%;
+  float: left;
+}
+.icon-currency {
+  width: 20%;
+  height: inherit;
+  margin-right: 1%;
+  float: left;
+  background-image: url("currency.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  position:absolute;
+  margin-right: 10%;
+}
+.currency-name {
+  width: 40%;
+  height: 30%;
+  //border: 1px solid black;
+  float: left;
+  margin-top: 0.5%;
+  margin-left: 30%;
+}
+
+.currency-country {
+  width: 40%;
+  height: 30%;
+  //border: 1px solid black;
+  float: left;
+  margin-top: 0.5%;
+  margin-left: 30%;
+}
+.currency-value {
+
+  width: 40%;
+  height: 30%;
+  //border: 1px solid black;
+  float: left;
+  margin-top: 0.5%;
+  margin-left: 30%;
+}
+/*.gifs-left {
+  width: 15%;
+  height: 72%;
+  //border: 1px solid black;
+  float: left;
+  margin: 0.5%;
+  margin-top: 5%;
+  //background-image: url("currency.gif");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+}
+.gifs-right {
+  width: 15%;
+  height: 72%;
+  //border: 1px solid black;
+  float: right;
+  margin: 0.5%;
+  margin-top: 5%;
+  //background-image: url("currency-new.gif");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+}*/
+.icons-delete-edit {
+  width: 20%;
+  //border: 1px solid black;
+  float: right;
+  //background-color: #306967;
+  fill: white;
+  //transform: scale(0.8);
+}
+.EDIT {
+  width: 100%;
+  float: left;
+  background-image: url("edit.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  fill: white;
+}
+.DELETE {
+  width: 100%;
+  float: left;
+  background-image: url("delete.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+.EDIT:hover {
+  background-image: url("big-edit.svg");
+}
+.DELETE:hover {
+  background-image: url("big-delete.svg");
+}
+.search-button {
+  width: 10%;
+  height: 20%;
+  margin-left: 2%;
+  margin-top: 2%;
+  padding: 0.4%;
+  border-radius: 2vh;
+}
+.search-button {
+  background-color: #D7E0EB;
+  color: #253439;
+  font-weight: bold;
+}
+.search-button:hover {
+  width: 12%;
+  font-size: 18px;
+}
+.search-button:active {
+  font-size: 12px;
+}
+.icon {
+  width: 12%;
+  float: left;
+  background-image: url("CurrencyLogo.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+hr {
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-bottom: 0.5%;
+}

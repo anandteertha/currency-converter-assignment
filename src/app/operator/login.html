@@ -74,15 +74,13 @@
       <div class="logo" style="float: left; width: 50%; height:100%"></div>
       <div class="login" style="float: right; width: 50%; height:100%">
         <div class="form_login">
-          <form #loginForm="ngForm" (ngSubmit)="loginUser">
-            <input class="inputs" type="text" name="" value="" placeholder="username" required>
-            <input class="inputs" type="password" name="" value="" placeholder="password" required>
-            <input class="inputs"type="radio" name="userType" value="Operator" id="Operator" required>
-            <label id="op" for="Operator">OPERATOR</label>
-            <input class="inputs" type="radio" name="userType" value="Consumer" id="Consumer" required>
-            <label id ="con" for="Consumer">CONSUMER</label>
-            <input class="inputs" id="buttons" type="submit" value="LOGIN">
-          </form>
+          <input class="inputs" type="text" name="" value="" placeholder="username" required>
+          <input class="inputs" type="password" name="" value="" placeholder="password" required>
+          <input class="inputs"type="radio" name="userType" value="Operator" id="Operator" required>
+          <label id="op" for="Operator">OPERATOR</label>
+          <input class="inputs" type="radio" name="userType" value="Consumer" id="Consumer" required>
+          <label id ="con" for="Consumer">CONSUMER</label>
+          <input class="inputs" id="buttons" type="submit" onclick="login();" name="" value="LOGIN">
         </div>
       </div>
     </div>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <link href='https://fonts.googleapis.com/css?family=Playfair Display' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Hammersmith One' rel='stylesheet'>
+  </head>
+  <body>
+    <div class="main">
+      <div class="logo" style="float: left; width: 50%; height:100%"></div>
+      <div class="login" style="float: right; width: 50%; height:100%">
+        <div class="form_login">
+          <form #loginForm="ngForm" (ngSubmit)="loginUser(loginForm.value)">
+            <input class="inputs" type="text" name="username" value="" placeholder="username" required ngModel>
+            <input class="inputs" type="password" name="pswd" value="" placeholder="password" required ngModel>
+            <input class="inputs"type="radio" name="userType" value="Operator" id="Operator" required ngModel>
+            <label id="op" for="Operator">OPERATOR</label>
+            <input class="inputs" type="radio" name="userType" value="Consumer" id="Consumer" required ngModel>
+            <label id ="con" for="Consumer">CONSUMER</label>
+            <input class="inputs" id="buttons" type="submit" value="LOGIN">
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

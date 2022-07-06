@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link href='https://fonts.googleapis.com/css?family=Playfair Display' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Hammersmith One' rel='stylesheet'>
+    <title>OPERATOR</title>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="icon"></div>
+      <a class="active" href="#">VIEW</a>
+      <a routerLink="/add">ADD</a>
+      <a href="/edit">EDIT</a>
+      <a href="/delete">DELETE</a>
+    </div>
+    <hr>
+    <div class="gifs-left">
+
+    </div>
+    <input class="search" type="text" #searchBox (keydown)="keyDownEvent()" (keyup)="searchList(searchBox.value)" name="" value="" placeholder="search"><!-- <input class="search-button" type="submit" onclick="search" name="" value="SEARCH">-->
+    <div class="filter-sort">
+
+    </div>
+    <div class="gifs-right">
+
+    </div>
+    <div class="main" #mainDiv>
+      <!--
+      <div id="currency" class="currency">
+        <!--
+        <div class="icons-delete-edit">
+          <object type="image/svg+xml" class="EDIT icons-delete-edit">
+
+          </object>
+          <object type="image/svg+xml" class="DELETE icons-delete-edit">
+
+          </object>
+        </div>
+        <div class="icon-currency">
+
+        </div>
+        <div class="currency-name">
+          Name: Indian Rupees (INR)
+        </div>
+        <div class="currency-country">
+          Country: India
+
+        </div>
+        <div class="currency-value">
+          USD equivalent:   0.013 $
+
+        </div>
+      </div>
+      <div class="currency">
+        <div class="icon-currency">
+
+        </div>
+        <div class="currency-name">
+          Name: Indian Rupees (INR)
+        </div>
+        <div class="icons-delete-edit">
+          <div class="EDIT">
+
+          </div>
+          <div class="DELETE">
+
+          </div>
+        </div>
+        <div class="currency-country">
+          Country: India
+
+        </div>
+        <div class="currency-value">
+          USD equivalent:   0.013 $
+
+        </div>
+      </div>
+      <div class="currency">
+        <div class="icon-currency">
+
+        </div>
+        <div class="currency-name">
+          Name: Indian Rupees (INR)
+        </div>
+        <div class="icons-delete-edit">
+          <div class="EDIT">
+
+          </div>
+          <div class="DELETE">
+
+          </div>
+        </div>
+        <div class="currency-country">
+          Country: India
+
+        </div>
+        <div class="currency-value">
+          USD equivalent:   0.013 $
+
+        </div>
+      </div>
+      <div class="currency">
+        <div class="icon-currency">
+
+        </div>
+        <div class="currency-name">
+          Name: Indian Rupees (INR)
+        </div>
+        <div class="icons-delete-edit">
+          <div class="EDIT">
+
+          </div>
+          <div class="DELETE">
+
+          </div>
+        </div>
+        <div class="currency-country">
+          Country: India
+
+        </div>
+        <div class="currency-value">
+          USD equivalent:   0.013 $
+
+        </div>
+      </div>
+    -->
+    </div>
+  </body>
+</html>
