@@ -6,6 +6,7 @@ body {
   font-size: 20px;
   color: #D7E0EB;
   background-color: #253439;
+  width: 100%;
 }
 .navbar {
   width: 100%;
@@ -16,7 +17,7 @@ body {
   float: left;
   color: white;
   text-decoration: none;
-  width: 22%;
+  width: 40%;
   text-align: center;
   padding-top: 2%;
   padding-bottom: 2%;
@@ -36,27 +37,8 @@ body {
   background-color: #243539;
 }
 
-/*  @media screen and (max-width: 500px) {
-  .navbar a {
-    float: none;
-    display: block;
-    width: 100%;
-    text-align: left; /* If you want the text to be left-aligned on small screens */
-/*  }
-} */
-.main {
-  margin-top: 5%;
-  margin-left: 5%;
-  margin-right: 5%;
-  width: 80%;
-  border: 1px solid #D7E0EB;
-  border-opacity: 0.2;
-  overflow-y: auto;
-  padding-left: 2%;
-  padding-right: 2%;
-  box-sizing: border-box;
-  padding-bottom: 5vh;
-}
+
+
 .search {
   margin-top: 1%;
   margin-left: 25%;
@@ -70,6 +52,18 @@ body {
   height: 40px;
   float: left;
   border-radius: 6vh;
+}
+.main {
+  margin-top: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
+  width: 80%;
+  border: 1px solid #D7E0EB;
+  border-opacity: 0.2;
+  overflow-y: auto;
+  padding-left: 2%;
+  padding-right: 2%;
+  box-sizing: border-box;
 }
 .currency {
   width: 96%;
@@ -115,62 +109,6 @@ body {
   float: left;
   margin-top: 0.5%;
   margin-left: 30%;
-}
-/*.gifs-left {
-  width: 15%;
-  height: 72%;
-  //border: 1px solid black;
-  float: left;
-  margin: 0.5%;
-  margin-top: 5%;
-  //background-image: url("currency.gif");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  background-position: center;
-}
-.gifs-right {
-  width: 15%;
-  height: 72%;
-  //border: 1px solid black;
-  float: right;
-  margin: 0.5%;
-  margin-top: 5%;
-  //background-image: url("currency-new.gif");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  background-position: center;
-}*/
-.icons-delete-edit {
-  width: 20%;
-  //border: 1px solid black;
-  float: right;
-  //background-color: #306967;
-  fill: white;
-  //transform: scale(0.8);
-}
-.EDIT {
-  width: 100%;
-  float: left;
-  background-image: url("edit.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  fill: white;
-}
-.DELETE {
-  width: 100%;
-  float: left;
-  background-image: url("delete.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  margin: 0;
-  padding: 0;
-  color: white;
-}
-.EDIT:hover {
-  background-image: url("big-edit.svg");
-}
-.DELETE:hover {
-  background-image: url("big-delete.svg");
 }
 .search-button {
   width: 10%;

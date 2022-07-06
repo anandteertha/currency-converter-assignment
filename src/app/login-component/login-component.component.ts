@@ -20,6 +20,7 @@ export class LoginComponentComponent implements OnInit {
       }
       else {
         //redirect to CONSUMER
+        this.router.navigate(['/consumer']);
       }
     }
     else {

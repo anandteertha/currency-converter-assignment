@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link href='https://fonts.googleapis.com/css?family=Playfair Display' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Hammersmith One' rel='stylesheet'>
+    <title>CONSUMER</title>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="icon"></div>
+      <a class="active" href="#">VIEW</a>
+      <a routerLink="/compare">COMPARE</a>
+    </div>
+    <hr>
+    <input class="search" type="text" #searchBox (keydown)="keyDownEvent()" (keyup)="searchList(searchBox.value)" name="" value="" placeholder="search">
+    <div class="main" #mainDiv>
+    </div>
+  </body>
+</html>
