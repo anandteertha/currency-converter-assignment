@@ -15,7 +15,7 @@ export class OperatorComponent implements OnInit, AfterViewInit {
   added = false;
   keyDownEvent() {
   }
-  @Input() fields = [
+  static fields = [
     {
       CurrencyName: 'Indian Rupees (INR)',
       Country: 'India',
@@ -39,8 +39,8 @@ export class OperatorComponent implements OnInit, AfterViewInit {
   ]
 
   constructor(public AppComponent: AppComponent, private renderer: Renderer2, private route: ActivatedRoute, private router: Router) {
-    this.fields = this.AppComponent.fields;
-    console.log(this.fields);
+    //this.fields = this.AppComponent.fields;
+    //console.log(this.fields);
     const s = this.route.snapshot.paramMap.get('x')!;
     var urlx = this.router.url;
     if (urlx != "/operator") {
@@ -55,7 +55,7 @@ export class OperatorComponent implements OnInit, AfterViewInit {
         Country: lst[0],
         USD_Equivalent: lst[2] + " $"
       };
-      this.fields.push(x);
+      OperatorComponent.fields.push(x);
       this.added = true;
     }
     else {
@@ -66,12 +66,12 @@ export class OperatorComponent implements OnInit, AfterViewInit {
   alertItemAdded(event) {
     alert("in operator component")
     var lst = event.split('&');
-    this.fields.push({
+    OperatorComponent.fields.push({
       CurrencyName: lst[1],
       Country: lst[0],
       USD_Equivalent: lst[2]
     });
-    console.log("fields = ", this.fields);
+    console.log("fields = ", OperatorComponent.fields);
 
   }
 
@@ -83,7 +83,7 @@ export class OperatorComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     let i = 0;
     console.log(this.main.nativeElement.attributes);
-    for(i=0; i < this.fields.length; i++) {
+    for(i=0; i < OperatorComponent.fields.length; i++) {
       var recaptchaContainer = this.renderer.createElement('div');
       this.renderer.addClass(recaptchaContainer, 'currency');
       this.renderer.setProperty(recaptchaContainer, 'id', 'currency');
@@ -100,7 +100,7 @@ export class OperatorComponent implements OnInit, AfterViewInit {
 
 
       var Name: string;
-      Name = 'Name: ' + this.fields[i].CurrencyName;
+      Name = 'Name: ' + OperatorComponent.fields[i].CurrencyName;
       console.log(Name);
       this.renderer.setProperty(recaptchaContainer3, 'innerHTML', Name);
       this.renderer.appendChild(recaptchaContainer, recaptchaContainer3);
@@ -109,7 +109,7 @@ export class OperatorComponent implements OnInit, AfterViewInit {
       var Country: string;
       var recaptchaContainer4 = this.renderer.createElement('div');
       this.renderer.addClass(recaptchaContainer4, 'currency-country');
-      Country = 'Country: ' + this.fields[i].Country;
+      Country = 'Country: ' + OperatorComponent.fields[i].Country;
       console.log(Country);
 
       this.renderer.setProperty(recaptchaContainer4, 'innerHTML', Country);
@@ -119,7 +119,7 @@ export class OperatorComponent implements OnInit, AfterViewInit {
       var recaptchaContainer5 = this.renderer.createElement('div');
       this.renderer.addClass(recaptchaContainer5, 'currency-value');
       var USD_Equivalent: string;
-      USD_Equivalent = 'USD equivalent: ' + this.fields[i].USD_Equivalent;
+      USD_Equivalent = 'USD equivalent: ' + OperatorComponent.fields[i].USD_Equivalent;
       this.renderer.setProperty(recaptchaContainer5, 'innerHTML', USD_Equivalent);
       this.renderer.appendChild(recaptchaContainer, recaptchaContainer5);
     }
@@ -129,7 +129,7 @@ export class OperatorComponent implements OnInit, AfterViewInit {
     let i = 0;
     if (val.trim() == "") {
       this.renderer.setProperty(this.main.nativeElement, 'innerHTML', " ");
-      for (i=0;i<this.fields.length; i++) {
+      for (i=0;i<OperatorComponent.fields.length; i++) {
         var recaptchaContainer = this.renderer.createElement('div');
         this.renderer.addClass(recaptchaContainer, 'currency');
         this.renderer.setProperty(recaptchaContainer, 'id', 'currency');
@@ -146,7 +146,7 @@ export class OperatorComponent implements OnInit, AfterViewInit {
 
 
         var Name: string;
-        Name = 'Name: ' + this.fields[i].CurrencyName;
+        Name = 'Name: ' + OperatorComponent.fields[i].CurrencyName;
         console.log(Name);
         this.renderer.setProperty(recaptchaContainer3, 'innerHTML', Name);
         this.renderer.appendChild(recaptchaContainer, recaptchaContainer3);
@@ -155,7 +155,7 @@ export class OperatorComponent implements OnInit, AfterViewInit {
         var Country: string;
         var recaptchaContainer4 = this.renderer.createElement('div');
         this.renderer.addClass(recaptchaContainer4, 'currency-country');
-        Country = 'Country: ' + this.fields[i].Country;
+        Country = 'Country: ' + OperatorComponent.fields[i].Country;
         console.log(Country);
 
         this.renderer.setProperty(recaptchaContainer4, 'innerHTML', Country);
@@ -165,7 +165,7 @@ export class OperatorComponent implements OnInit, AfterViewInit {
         var recaptchaContainer5 = this.renderer.createElement('div');
         this.renderer.addClass(recaptchaContainer5, 'currency-value');
         var USD_Equivalent: string;
-        USD_Equivalent = 'USD equivalent: ' + this.fields[i].USD_Equivalent;
+        USD_Equivalent = 'USD equivalent: ' + OperatorComponent.fields[i].USD_Equivalent;
         this.renderer.setProperty(recaptchaContainer5, 'innerHTML', USD_Equivalent);
         this.renderer.appendChild(recaptchaContainer, recaptchaContainer5);
       }
@@ -173,12 +173,12 @@ export class OperatorComponent implements OnInit, AfterViewInit {
     else {
       var visited: boolean;
       visited = false;
-      for(i=0;i<this.fields.length;i++) {
+      for(i=0;i<OperatorComponent.fields.length;i++) {
 
-        if(this.fields[i].CurrencyName.toLowerCase().startsWith(val.toLowerCase()) || this.fields[i].Country.toLowerCase().startsWith(val.toLowerCase()) || this.fields[i].USD_Equivalent.toLowerCase().startsWith(val.toLowerCase())) {
+        if(OperatorComponent.fields[i].CurrencyName.toLowerCase().startsWith(val.toLowerCase()) || OperatorComponent.fields[i].Country.toLowerCase().startsWith(val.toLowerCase()) || OperatorComponent.fields[i].USD_Equivalent.toLowerCase().startsWith(val.toLowerCase())) {
           if(!visited) {
             this.renderer.setProperty(this.main.nativeElement, 'innerHTML', " ");
-            console.log(this.fields[i]);
+            console.log(OperatorComponent.fields[i]);
             visited = true;
             var recaptchaContainer = this.renderer.createElement('div');
             this.renderer.addClass(recaptchaContainer, 'currency');
@@ -196,7 +196,7 @@ export class OperatorComponent implements OnInit, AfterViewInit {
 
 
             var Name: string;
-            Name = 'Name: ' + this.fields[i].CurrencyName;
+            Name = 'Name: ' + OperatorComponent.fields[i].CurrencyName;
             console.log(Name);
             this.renderer.setProperty(recaptchaContainer3, 'innerHTML', Name);
             this.renderer.appendChild(recaptchaContainer, recaptchaContainer3);
@@ -205,7 +205,7 @@ export class OperatorComponent implements OnInit, AfterViewInit {
             var Country: string;
             var recaptchaContainer4 = this.renderer.createElement('div');
             this.renderer.addClass(recaptchaContainer4, 'currency-country');
-            Country = 'Country: ' + this.fields[i].Country;
+            Country = 'Country: ' + OperatorComponent.fields[i].Country;
             console.log(Country);
 
             this.renderer.setProperty(recaptchaContainer4, 'innerHTML', Country);
@@ -215,13 +215,13 @@ export class OperatorComponent implements OnInit, AfterViewInit {
             var recaptchaContainer5 = this.renderer.createElement('div');
             this.renderer.addClass(recaptchaContainer5, 'currency-value');
             var USD_Equivalent: string;
-            USD_Equivalent = 'USD equivalent: ' + this.fields[i].USD_Equivalent;
+            USD_Equivalent = 'USD equivalent: ' + OperatorComponent.fields[i].USD_Equivalent;
             this.renderer.setProperty(recaptchaContainer5, 'innerHTML', USD_Equivalent);
             this.renderer.appendChild(recaptchaContainer, recaptchaContainer5);
           }
           else {
             //this.renderer.setProperty(this.main.nativeElement, 'innerHTML', " ");
-            console.log(this.fields[i]);
+            console.log(OperatorComponent.fields[i]);
             visited = true;
             var recaptchaContainer = this.renderer.createElement('div');
             this.renderer.addClass(recaptchaContainer, 'currency');
@@ -239,7 +239,7 @@ export class OperatorComponent implements OnInit, AfterViewInit {
 
 
             var Name: string;
-            Name = 'Name: ' + this.fields[i].CurrencyName;
+            Name = 'Name: ' + OperatorComponent.fields[i].CurrencyName;
             console.log(Name);
             this.renderer.setProperty(recaptchaContainer3, 'innerHTML', Name);
             this.renderer.appendChild(recaptchaContainer, recaptchaContainer3);
@@ -248,7 +248,7 @@ export class OperatorComponent implements OnInit, AfterViewInit {
             var Country: string;
             var recaptchaContainer4 = this.renderer.createElement('div');
             this.renderer.addClass(recaptchaContainer4, 'currency-country');
-            Country = 'Country: ' + this.fields[i].Country;
+            Country = 'Country: ' + OperatorComponent.fields[i].Country;
             console.log(Country);
 
             this.renderer.setProperty(recaptchaContainer4, 'innerHTML', Country);
@@ -258,7 +258,7 @@ export class OperatorComponent implements OnInit, AfterViewInit {
             var recaptchaContainer5 = this.renderer.createElement('div');
             this.renderer.addClass(recaptchaContainer5, 'currency-value');
             var USD_Equivalent: string;
-            USD_Equivalent = 'USD equivalent: ' + this.fields[i].USD_Equivalent;
+            USD_Equivalent = 'USD equivalent: ' + OperatorComponent.fields[i].USD_Equivalent;
             this.renderer.setProperty(recaptchaContainer5, 'innerHTML', USD_Equivalent);
             this.renderer.appendChild(recaptchaContainer, recaptchaContainer5);
           }
