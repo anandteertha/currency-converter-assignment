@@ -72,9 +72,11 @@ body {
 }
 .icon-currency {
   width: 20%;
-  height: inherit;
-  margin-right: 1%;
-  float: left;
+  height: 25vh;
+  margin-top: 1%;
+  margin-right: 4%;
+  margin-left: 5%;
+  float: right;
   background-image: url("currency.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -85,27 +87,27 @@ body {
   width: 40%;
   height: 30%;
   //border: 1px solid black;
-  float: left;
-  margin-top: 0.5%;
-  margin-left: 30%;
+  float: right;
+  margin-top: 3%;
+  margin-left: 50%;
 }
 
 .currency-country {
   width: 40%;
   height: 30%;
   //border: 1px solid black;
-  float: left;
-  margin-top: 0.5%;
-  margin-left: 30%;
+  float: right;
+  margin-top: 6%;
+  margin-left: 50%;
 }
 .currency-value {
 
   width: 40%;
   height: 30%;
   //border: 1px solid black;
-  float: left;
-  margin-top: 0.5%;
-  margin-left: 30%;
+  float: right;
+  margin-top: 6%;
+  margin-left: 50%;
 }
 .icon {
   width: 12%;
@@ -129,10 +131,10 @@ hr {
   float: left;
 }
 .line {
-  height: 70vh;
+  height: 30vh;
   float: left;
   width: 0.1%;
-  margin-top:4%;
+  margin-top:10%;
   background-color: #D7E0EB;
 }
 .compare2 {
