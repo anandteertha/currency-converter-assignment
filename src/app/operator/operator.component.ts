@@ -87,7 +87,26 @@ export class OperatorComponent implements OnInit, AfterViewInit {
       var recaptchaContainer = this.renderer.createElement('div');
       this.renderer.addClass(recaptchaContainer, 'currency');
       this.renderer.setProperty(recaptchaContainer, 'id', 'currency');
+      //recaptchaContainer.innerHTML = `<div class="icons-delete-edit"><object type="image/svg+xml" class="EDIT icons-delete-edit"></object><object type="image/svg+xml" class="DELETE icons-delete-edit"></object></div>`;
       this.renderer.appendChild(this.main.nativeElement, recaptchaContainer);
+
+
+      var rc = this.renderer.createElement('div');
+      this.renderer.addClass(rc, 'icons-delete-edit');
+      this.renderer.appendChild(recaptchaContainer, rc);
+
+      var rc2 = this.renderer.createElement('object');
+      this.renderer.setProperty(rc2, 'type', 'image/svg+xml')
+      this.renderer.addClass(rc2, 'EDIT');
+      this.renderer.addClass(rc2, "icons-delete-edit")
+      this.renderer.appendChild(rc, rc2);
+
+      var rc3 = this.renderer.createElement('object');
+      this.renderer.setProperty(rc3, 'type', 'image/svg+xml')
+      this.renderer.addClass(rc3, 'DELETE');
+      this.renderer.addClass(rc3, "icons-delete-edit")
+      this.renderer.appendChild(rc, rc3)
+
 
 
       var recaptchaContainer2 = this.renderer.createElement('div');
@@ -122,6 +141,10 @@ export class OperatorComponent implements OnInit, AfterViewInit {
       USD_Equivalent = 'USD equivalent: ' + OperatorComponent.fields[i].USD_Equivalent;
       this.renderer.setProperty(recaptchaContainer5, 'innerHTML', USD_Equivalent);
       this.renderer.appendChild(recaptchaContainer, recaptchaContainer5);
+
+      var l = this.renderer.createElement('div');
+      this.renderer.addClass(l,'line')
+      this.renderer.appendChild(recaptchaContainer5, l)
     }
   }
   searchList(val:string) {
@@ -134,6 +157,21 @@ export class OperatorComponent implements OnInit, AfterViewInit {
         this.renderer.addClass(recaptchaContainer, 'currency');
         this.renderer.setProperty(recaptchaContainer, 'id', 'currency');
         this.renderer.appendChild(this.main.nativeElement, recaptchaContainer);
+        var rc = this.renderer.createElement('div');
+        this.renderer.addClass(rc, 'icons-delete-edit');
+        this.renderer.appendChild(recaptchaContainer, rc);
+
+        var rc2 = this.renderer.createElement('object');
+        this.renderer.setProperty(rc2, 'type', 'image/svg+xml')
+        this.renderer.addClass(rc2, 'EDIT');
+        this.renderer.addClass(rc2, "icons-delete-edit")
+        this.renderer.appendChild(rc, rc2);
+
+        var rc3 = this.renderer.createElement('object');
+        this.renderer.setProperty(rc3, 'type', 'image/svg+xml')
+        this.renderer.addClass(rc3, 'DELETE');
+        this.renderer.addClass(rc3, "icons-delete-edit")
+        this.renderer.appendChild(rc, rc3)
 
 
         var recaptchaContainer2 = this.renderer.createElement('div');
@@ -184,6 +222,21 @@ export class OperatorComponent implements OnInit, AfterViewInit {
             this.renderer.addClass(recaptchaContainer, 'currency');
             this.renderer.setProperty(recaptchaContainer, 'id', 'currency');
             this.renderer.appendChild(this.main.nativeElement, recaptchaContainer);
+            var rc = this.renderer.createElement('div');
+            this.renderer.addClass(rc, 'icons-delete-edit');
+            this.renderer.appendChild(recaptchaContainer, rc);
+
+            var rc2 = this.renderer.createElement('object');
+            this.renderer.setProperty(rc2, 'type', 'image/svg+xml')
+            this.renderer.addClass(rc2, 'EDIT');
+            this.renderer.addClass(rc2, "icons-delete-edit")
+            this.renderer.appendChild(rc, rc2);
+
+            var rc3 = this.renderer.createElement('object');
+            this.renderer.setProperty(rc3, 'type', 'image/svg+xml')
+            this.renderer.addClass(rc3, 'DELETE');
+            this.renderer.addClass(rc3, "icons-delete-edit")
+            this.renderer.appendChild(rc, rc3)
 
 
             var recaptchaContainer2 = this.renderer.createElement('div');
@@ -227,6 +280,21 @@ export class OperatorComponent implements OnInit, AfterViewInit {
             this.renderer.addClass(recaptchaContainer, 'currency');
             this.renderer.setProperty(recaptchaContainer, 'id', 'currency');
             this.renderer.appendChild(this.main.nativeElement, recaptchaContainer);
+            var rc = this.renderer.createElement('div');
+            this.renderer.addClass(rc, 'icons-delete-edit');
+            this.renderer.appendChild(recaptchaContainer, rc);
+
+            var rc2 = this.renderer.createElement('object');
+            this.renderer.setProperty(rc2, 'type', 'image/svg+xml')
+            this.renderer.addClass(rc2, 'EDIT');
+            this.renderer.addClass(rc2, "icons-delete-edit")
+            this.renderer.appendChild(rc, rc2);
+
+            var rc3 = this.renderer.createElement('object');
+            this.renderer.setProperty(rc3, 'type', 'image/svg+xml')
+            this.renderer.addClass(rc3, 'DELETE');
+            this.renderer.addClass(rc3, "icons-delete-edit")
+            this.renderer.appendChild(rc, rc3)
 
 
             var recaptchaContainer2 = this.renderer.createElement('div');

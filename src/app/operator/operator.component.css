@@ -78,6 +78,7 @@ body {
   margin-top: 2%;
   padding: 2%;
   float: left;
+  margin-bottom: 5%;
 }
 .icon-currency {
   width: 20%;
@@ -147,6 +148,9 @@ body {
   //background-color: #306967;
   fill: white;
   //transform: scale(0.8);
+  height: 10vh;
+  padding: 0;
+  margin: 0;
 }
 .EDIT {
   width: 100%;
@@ -205,4 +209,12 @@ hr {
   margin-left: 2%;
   margin-right: 2%;
   margin-bottom: 0.5%;
+}
+.line {
+  width: 140%;
+  margin: 2%;
+  height: 0.1vh;
+  margin-right: 2%;
+  background-color: #D7E0EB;
+  margin-top: 18%;
 }
