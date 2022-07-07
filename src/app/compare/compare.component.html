@@ -16,5 +16,28 @@
     <!--<input class="search" type="text" #searchBox (keydown)="keyDownEvent()" (keyup)="searchList(searchBox.value)" name="" value="" placeholder="search">-->
     <!--<div class="main" #mainDiv>
     </div>-->
+    <div class="compare1">
+      <datalist id="c1">
+        <option *ngFor="let item of this.fields">
+          {{item.CurrencyName}}
+          {{item.Country}}
+          {{item.USD_Equivalent}}
+        </option>
+      </datalist>
+      <input class="search" placeholder="compare 1"  autoComplete="on" list="c1"/>
+    </div>
+    <div class="line">
+
+    </div>
+    <div class="compare2">
+      <datalist id="c2">
+        <option *ngFor="let item of this.fields">
+          {{item.CurrencyName}}
+          {{item.Country}}
+          {{item.USD_Equivalent}}
+        </option>
+      </datalist>
+      <input class="search" placeholder="compare 2"  autoComplete="on" list="c2"/>
+    </div>
   </body>
 </html>
