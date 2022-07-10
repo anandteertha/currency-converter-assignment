@@ -80,9 +80,22 @@ export class OperatorComponent implements OnInit, AfterViewInit {
 
 
   }
+  editRedirect(i, oc) {
+    console.log(oc);
+    console.log(oc.fields[0].CurrencyName);
+
+    this.router.navigate(['edit',oc.fields[0].CurrencyName+" " + oc.fields[0].Country + " " +oc.fields[0].USD_Equivalent]);
+  }
+  delete(i) {
+    console.log("deleting: ",OperatorComponent.fields);
+    OperatorComponent.fields.splice(i, 1);
+
+  }
   ngAfterViewInit(): void {
     let i = 0;
     console.log(this.main.nativeElement.attributes);
+    console.log(OperatorComponent.fields);
+
     for(i=0; i < OperatorComponent.fields.length; i++) {
       var recaptchaContainer = this.renderer.createElement('div');
       this.renderer.addClass(recaptchaContainer, 'currency');
@@ -98,13 +111,35 @@ export class OperatorComponent implements OnInit, AfterViewInit {
       var rc2 = this.renderer.createElement('object');
       this.renderer.setProperty(rc2, 'type', 'image/svg+xml')
       this.renderer.addClass(rc2, 'EDIT');
-      this.renderer.addClass(rc2, "icons-delete-edit")
+      this.renderer.addClass(rc2, "icons-delete-edit");
+      rc2.OperatorComponent = OperatorComponent
+      rc2.addEventListener('click', (e) => {
+        var x = e.currentTarget.OperatorComponent;
+        this.editRedirect(i, x);
+      });
       this.renderer.appendChild(rc, rc2);
 
       var rc3 = this.renderer.createElement('object');
       this.renderer.setProperty(rc3, 'type', 'image/svg+xml')
       this.renderer.addClass(rc3, 'DELETE');
       this.renderer.addClass(rc3, "icons-delete-edit")
+      rc3.OperatorComponent = OperatorComponent
+      rc3.index = i;
+      rc3.addEventListener('click', (e) => {
+        var x = e.currentTarget.OperatorComponent;
+        console.log(e.currentTarget.index);
+        this.delete(e.currentTarget.index);
+        this.added = true;
+        console.log(this.main.nativeElement.childNodes);
+        var arr = this.main.nativeElement.childNodes;
+        for(var j=0;j<arr.length;j++) {
+          if(j == e.currentTarget.index) {
+            this.main.nativeElement.removeChild(this.main.nativeElement.childNodes[j]);
+            break;
+          }
+        }
+      });
+
       this.renderer.appendChild(rc, rc3)
 
 
@@ -165,12 +200,33 @@ export class OperatorComponent implements OnInit, AfterViewInit {
         this.renderer.setProperty(rc2, 'type', 'image/svg+xml')
         this.renderer.addClass(rc2, 'EDIT');
         this.renderer.addClass(rc2, "icons-delete-edit")
+        rc2.OperatorComponent = OperatorComponent
+        rc2.addEventListener('click', (e) => {
+          var x = e.currentTarget.OperatorComponent;
+          this.editRedirect(i, x);
+        });
         this.renderer.appendChild(rc, rc2);
 
         var rc3 = this.renderer.createElement('object');
         this.renderer.setProperty(rc3, 'type', 'image/svg+xml')
         this.renderer.addClass(rc3, 'DELETE');
-        this.renderer.addClass(rc3, "icons-delete-edit")
+        this.renderer.addClass(rc3, "icons-delete-edit");
+        rc3.OperatorComponent = OperatorComponent
+        rc3.index = i;
+        rc3.addEventListener('click', (e) => {
+          var x = e.currentTarget.OperatorComponent;
+          console.log(e.currentTarget.index);
+          this.delete(e.currentTarget.index);
+          this.added = true;
+          console.log(this.main.nativeElement.childNodes);
+          var arr = this.main.nativeElement.childNodes;
+          for(var j=0;j<arr.length;j++) {
+            if(j == e.currentTarget.index) {
+              this.main.nativeElement.removeChild(this.main.nativeElement.childNodes[j]);
+              break;
+            }
+          }
+        });
         this.renderer.appendChild(rc, rc3)
 
 
@@ -212,6 +268,7 @@ export class OperatorComponent implements OnInit, AfterViewInit {
       var visited: boolean;
       visited = false;
       for(i=0;i<OperatorComponent.fields.length;i++) {
+        console.log("OperatorComponent.fields[i].USD_Equivalent.toLowerCase(): ",OperatorComponent.fields[i].USD_Equivalent.toLowerCase());
 
         if(OperatorComponent.fields[i].CurrencyName.toLowerCase().startsWith(val.toLowerCase()) || OperatorComponent.fields[i].Country.toLowerCase().startsWith(val.toLowerCase()) || OperatorComponent.fields[i].USD_Equivalent.toLowerCase().startsWith(val.toLowerCase())) {
           if(!visited) {
@@ -229,13 +286,34 @@ export class OperatorComponent implements OnInit, AfterViewInit {
             var rc2 = this.renderer.createElement('object');
             this.renderer.setProperty(rc2, 'type', 'image/svg+xml')
             this.renderer.addClass(rc2, 'EDIT');
-            this.renderer.addClass(rc2, "icons-delete-edit")
+            this.renderer.addClass(rc2, "icons-delete-edit");
+            rc2.OperatorComponent = OperatorComponent
+            rc2.addEventListener('click', (e) => {
+              var x = e.currentTarget.OperatorComponent;
+              this.editRedirect(i, x);
+            });
             this.renderer.appendChild(rc, rc2);
 
             var rc3 = this.renderer.createElement('object');
             this.renderer.setProperty(rc3, 'type', 'image/svg+xml')
             this.renderer.addClass(rc3, 'DELETE');
             this.renderer.addClass(rc3, "icons-delete-edit")
+            rc3.OperatorComponent = OperatorComponent
+            rc3.index = i;
+            rc3.addEventListener('click', (e) => {
+              var x = e.currentTarget.OperatorComponent;
+              console.log(e.currentTarget.index);
+              this.delete(e.currentTarget.index);
+              this.added = true;
+              console.log(this.main.nativeElement.childNodes);
+              var arr = this.main.nativeElement.childNodes;
+              for(var j=0;j<arr.length;j++) {
+                if(j == e.currentTarget.index) {
+                  this.main.nativeElement.removeChild(this.main.nativeElement.childNodes[j]);
+                  break;
+                }
+              }
+            });
             this.renderer.appendChild(rc, rc3)
 
 
@@ -287,13 +365,34 @@ export class OperatorComponent implements OnInit, AfterViewInit {
             var rc2 = this.renderer.createElement('object');
             this.renderer.setProperty(rc2, 'type', 'image/svg+xml')
             this.renderer.addClass(rc2, 'EDIT');
-            this.renderer.addClass(rc2, "icons-delete-edit")
+            this.renderer.addClass(rc2, "icons-delete-edit");
+            rc2.OperatorComponent = OperatorComponent
+            rc2.addEventListener('click', (e) => {
+              var x = e.currentTarget.OperatorComponent;
+              this.editRedirect(i, x);
+            });
             this.renderer.appendChild(rc, rc2);
 
             var rc3 = this.renderer.createElement('object');
             this.renderer.setProperty(rc3, 'type', 'image/svg+xml')
             this.renderer.addClass(rc3, 'DELETE');
             this.renderer.addClass(rc3, "icons-delete-edit")
+            rc3.OperatorComponent = OperatorComponent
+            rc3.index = i;
+            rc3.addEventListener('click', (e) => {
+              var x = e.currentTarget.OperatorComponent;
+              console.log(e.currentTarget.index);
+              this.delete(e.currentTarget.index);
+              this.added = true;
+              console.log(this.main.nativeElement.childNodes);
+              var arr = this.main.nativeElement.childNodes;
+              for(var j=0;j<arr.length;j++) {
+                if(j == e.currentTarget.index) {
+                  this.main.nativeElement.removeChild(this.main.nativeElement.childNodes[j]);
+                  break;
+                }
+              }
+            });
             this.renderer.appendChild(rc, rc3)
 
 

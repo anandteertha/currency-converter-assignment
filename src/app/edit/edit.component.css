@@ -1,0 +1,151 @@
+body {
+  margin:0px;
+  height:100%;
+  font-family: 'Playfair Display';
+  font-family: 'Hammersmith One';
+  font-size: 20px;
+  color: #D7E0EB;
+  background-color: #253439;
+}
+.navbar {
+  width: 100%;
+  overflow: auto;
+  background-color: #253439;
+}
+.navbar a {
+  float: left;
+  color: white;
+  text-decoration: none;
+  width: 40%;
+  text-align: center;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  opacity: 0.3;
+}
+.navbar a:hover {
+    color: white;
+    font-size: 25px;
+    background-color: #243539;
+    opacity: 1;
+}
+.navbar:hover {
+  opacity: 1;
+  text-weight: bold;
+}
+.navbar a.active {
+  background-color: #243539;
+}
+.icon-currency {
+  width: 20%;
+  height: inherit;
+  margin-right: 1%;
+  float: left;
+  background-image: url("currency.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  position:absolute;
+  margin-right: 10%;
+}
+.currency-name {
+  width: 40%;
+  height: 30%;
+  //border: 1px solid black;
+  float: left;
+  margin-top: 0.5%;
+  margin-left: 30%;
+}
+
+.currency-country {
+  width: 40%;
+  height: 30%;
+  //border: 1px solid black;
+  float: left;
+  margin-top: 0.5%;
+  margin-left: 30%;
+}
+.currency-value {
+
+  width: 40%;
+  height: 30%;
+  //border: 1px solid black;
+  float: left;
+  margin-top: 0.5%;
+  margin-left: 30%;
+}
+.search-button {
+  width: 10%;
+  height: 20%;
+  margin-left: 2%;
+  margin-top: 2%;
+  padding: 0.4%;
+  border-radius: 2vh;
+}
+.search-button {
+  background-color: #D7E0EB;
+  color: #253439;
+  font-weight: bold;
+}
+.search-button:hover {
+  width: 12%;
+  font-size: 18px;
+}
+.search-button:active {
+  font-size: 12px;
+}
+.icon {
+  width: 12%;
+  float: left;
+  background-image: url("CurrencyLogo.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+hr {
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-bottom: 0.5%;
+}
+.line {
+  width: 140%;
+  margin: 2%;
+  height: 0.1vh;
+  margin-right: 2%;
+  background-color: #D7E0EB;
+  margin-top: 18%;
+}
+.main {
+  margin-top: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
+  width: 80%;
+  border: 1px solid #D7E0EB;
+  border-opacity: 0.2;
+  overflow-y: auto;
+  padding-left: 2%;
+  padding-right: 2%;
+  box-sizing: border-box;
+}
+
+.form_login {
+  margin-left: 10%;
+}
+.inputs {
+  margin: 4.68%;
+  width: 70%;
+  height: 5vh;
+  border-radius: 2vh;
+  padding-left: 2vh;
+}
+#buttons {
+  background-color: #D7E0EB;
+  color: #253439;
+}
+#buttons:hover {
+  width: 72%;
+  border: 1px dotted #203050;
+}
+#buttons:active {
+  margin: 6%;
+  font-size: 20px;
+}

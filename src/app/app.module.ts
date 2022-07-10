@@ -9,7 +9,8 @@ import { LoginComponentComponent } from './login-component/login-component.compo
 import { OperatorComponent } from './operator/operator.component';
 import { AddComponent } from './add/add.component';
 import { ConsumerComponent } from './consumer/consumer.component';
-import { CompareComponent } from './compare/compare.component'
+import { CompareComponent } from './compare/compare.component';
+import { EditComponent } from './edit/edit.component'
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { CompareComponent } from './compare/compare.component'
     OperatorComponent,
     AddComponent,
     ConsumerComponent,
-    CompareComponent
+    CompareComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,

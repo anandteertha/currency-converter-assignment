@@ -5,6 +5,7 @@ import { OperatorComponent } from "./operator/operator.component";
 import { AddComponent } from "./add/add.component";
 import { ConsumerComponent } from "./consumer/consumer.component";
 import { CompareComponent } from "./compare/compare.component";
+import { EditComponent } from "./edit/edit.component";
 
 const routes: Routes = [
   {
@@ -20,6 +21,10 @@ const routes: Routes = [
     path:'operator/:x'
   },
   {
+    component: OperatorComponent,
+    path: 'operator/:x1:x2'
+  },
+  {
     component: AddComponent,
     path: 'add'
   },
@@ -30,6 +35,10 @@ const routes: Routes = [
   {
     component: CompareComponent,
     path: 'compare'
+  },
+  {
+    component: EditComponent,
+    path: 'edit/:x'
   }
 ];
 

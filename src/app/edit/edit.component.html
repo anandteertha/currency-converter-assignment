@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link href='https://fonts.googleapis.com/css?family=Playfair Display' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Hammersmith One' rel='stylesheet'>
+    <title>EDIT CURRENCY</title>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="icon"></div>
+      <a class="active" href="#">VIEW</a>
+      <a routerLink="/add">ADD</a>
+    </div>
+    <hr>
+    <div class="main" #mainDiv>
+      <div class="login" style="float: left; width: 100%; height:100%">
+        <div class="form_login">
+          <form #editForm="ngForm" (ngSubmit)="editVal(editForm.value)" >
+            <input  class="inputs" type="text" name="country" value="" placeholder="Country Name" required [(ngModel)]="country">
+            <input  class="inputs" type="text" name="currency" value="" placeholder="Currency Name" required [(ngModel)]="currency">
+            <input  class="inputs" type="text" name="value" value="" placeholder="USD equivalent" required [(ngModel)]="value">
+            <input class="inputs" id="buttons" type="submit" value="EDIT USER">
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
