@@ -41,6 +41,9 @@ export class OperatorComponent implements OnInit, AfterViewInit {
   constructor(public AppComponent: AppComponent, private renderer: Renderer2, private route: ActivatedRoute, private router: Router) {
     //this.fields = this.AppComponent.fields;
     //console.log(this.fields);
+    if(localStorage.getItem('type') == "consumer") {
+      this.router.navigate(['/consumer'])
+    }
     const s = this.route.snapshot.paramMap.get('x')!;
     const x1 = this.route.snapshot.paramMap.get('x1')!;
     const x2 = this.route.snapshot.paramMap.get('x2')!;

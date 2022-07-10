@@ -16,10 +16,12 @@ export class LoginComponentComponent implements OnInit {
     if (item.username == "Anandteertha" && item.pswd == "12345Aa") {
       if (item.userType == "Operator") {
         //redirect to OPERATOR
+        localStorage.setItem('type', 'operator');
         this.router.navigate(['/operator']);
       }
       else {
         //redirect to CONSUMER
+        localStorage.setItem('type', 'consumer')
         this.router.navigate(['/consumer']);
       }
     }

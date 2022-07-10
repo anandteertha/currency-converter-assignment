@@ -26,6 +26,9 @@ export class EditComponent implements OnInit {
   value = ""
   customSearch: string;
   constructor(public AppComponent: AppComponent, private renderer: Renderer2, private route: ActivatedRoute, private router: Router) {
+    if(localStorage.getItem('type') == "consumer") {
+      this.router.navigate(['/consumer'])
+    }
     const s = this.route.snapshot.paramMap.get('x')!;
     var urlx = this.router.url;
     //alert(urlx)

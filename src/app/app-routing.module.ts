@@ -6,6 +6,7 @@ import { AddComponent } from "./add/add.component";
 import { ConsumerComponent } from "./consumer/consumer.component";
 import { CompareComponent } from "./compare/compare.component";
 import { EditComponent } from "./edit/edit.component";
+import { ErrorComponent } from "./error/error.component";
 
 const routes: Routes = [
   {
@@ -39,6 +40,10 @@ const routes: Routes = [
   {
     component: EditComponent,
     path: 'edit/:x'
+  },
+  {
+    component: ErrorComponent,
+    path: '**'
   }
 ];
 

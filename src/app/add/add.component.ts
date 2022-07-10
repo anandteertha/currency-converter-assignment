@@ -12,6 +12,9 @@ export class AddComponent implements OnInit {
   @Output() itemAdded:EventEmitter<string> = new EventEmitter();
   constructor(private router: Router) {
     //this.fields = this.AddComponent.fields;
+    if(localStorage.getItem('type') == "consumer") {
+      this.router.navigate(['/consumer'])
+    }
   }
   addVal(item: any) {
     var x = {}

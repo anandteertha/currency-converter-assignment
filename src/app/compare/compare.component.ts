@@ -182,6 +182,9 @@ export class CompareComponent implements OnInit {
   fields: Array<any>;
   constructor(public AppComponent: AppComponent, private renderer: Renderer2, private route: ActivatedRoute, private router: Router) {
     this.fields = this.AppComponent.fields;
+    if(localStorage.getItem('type') == "operator") {
+      this.router.navigate(['/operator'])
+    }
   }
 
   ngOnInit(): void {

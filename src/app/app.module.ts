@@ -10,7 +10,8 @@ import { OperatorComponent } from './operator/operator.component';
 import { AddComponent } from './add/add.component';
 import { ConsumerComponent } from './consumer/consumer.component';
 import { CompareComponent } from './compare/compare.component';
-import { EditComponent } from './edit/edit.component'
+import { EditComponent } from './edit/edit.component';
+import { ErrorComponent } from './error/error.component'
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { EditComponent } from './edit/edit.component'
     AddComponent,
     ConsumerComponent,
     CompareComponent,
-    EditComponent
+    EditComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
