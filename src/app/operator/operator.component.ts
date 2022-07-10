@@ -168,7 +168,6 @@ export class OperatorComponent implements OnInit, AfterViewInit {
   delete(i) {
     console.log("deleting: ",OperatorComponent.fields);
     OperatorComponent.fields.splice(i, 1);
-
   }
   displayAll() {
     let i = 0;
@@ -212,6 +211,8 @@ export class OperatorComponent implements OnInit, AfterViewInit {
         for(var j=0;j<arr.length;j++) {
           if(j == e.currentTarget.index) {
             this.main.nativeElement.removeChild(this.main.nativeElement.childNodes[j]);
+            this.renderer.setProperty(this.main.nativeElement, 'innerHTML', " ");
+            this.displayAll()
             break;
           }
         }
@@ -314,6 +315,8 @@ export class OperatorComponent implements OnInit, AfterViewInit {
               for(var j=0;j<arr.length;j++) {
                 if(j == e.currentTarget.index) {
                   this.main.nativeElement.removeChild(this.main.nativeElement.childNodes[j]);
+                  this.renderer.setProperty(this.main.nativeElement, 'innerHTML', " ");
+                  this.displayAll()
                   break;
                 }
               }
@@ -394,6 +397,8 @@ export class OperatorComponent implements OnInit, AfterViewInit {
               for(var j=0;j<arr.length;j++) {
                 if(j == e.currentTarget.index) {
                   this.main.nativeElement.removeChild(this.main.nativeElement.childNodes[j]);
+                  this.renderer.setProperty(this.main.nativeElement, 'innerHTML', " ");
+                  this.displayAll()
                   break;
                 }
               }
