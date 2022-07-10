@@ -19,7 +19,7 @@ body {
   float: left;
   color: white;
   text-decoration: none;
-  width: 22%;
+  width: 40%;
   text-align: center;
   padding-top: 2%;
   padding-bottom: 2%;
@@ -55,7 +55,15 @@ hr {
   padding-right: 2%;
   box-sizing: border-box;
 }
-
+.icon {
+  width: 12%;
+  float: left;
+  background-image: url("CurrencyLogo.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
 .form_login {
   margin-left: 10%;
 }

@@ -42,8 +42,13 @@ export class OperatorComponent implements OnInit, AfterViewInit {
     //this.fields = this.AppComponent.fields;
     //console.log(this.fields);
     const s = this.route.snapshot.paramMap.get('x')!;
+    const x1 = this.route.snapshot.paramMap.get('x1')!;
+    const x2 = this.route.snapshot.paramMap.get('x2')!;
     var urlx = this.router.url;
-    if (urlx != "/operator") {
+    //alert(s)
+    //alert(x1)
+    //alert(x2)
+    if (s) {
       console.log("here");
 
       var rem = urlx.replace("/operator/", "");
@@ -57,6 +62,23 @@ export class OperatorComponent implements OnInit, AfterViewInit {
       };
       OperatorComponent.fields.push(x);
       this.added = true;
+      this.router.navigate(['/operator']);
+    }
+    else if(x1 && x2) {
+      var lst = x1.split(" ");
+      var oldCurrencyName = lst[0]+" "+lst[1]+" "+lst[2];
+      var lst2 = x2.split(" ");
+      var newCurrencyName = lst2[0]+" "+lst2[1]+" "+lst2[2];
+      var newCountry = lst2[3];
+      var newUSD = lst2[4]+" "+lst2[5];
+      for(var idx = 0;idx<OperatorComponent.fields.length; idx++) {
+        if(OperatorComponent.fields[idx].CurrencyName == oldCurrencyName) {
+          OperatorComponent.fields[idx].CurrencyName = newCurrencyName;
+          OperatorComponent.fields[idx].Country = newCountry;
+          OperatorComponent.fields[idx].USD_Equivalent = newUSD;
+          this.router.navigate(['/operator']);
+        }
+      }
     }
     else {
       this.added = false;
@@ -82,9 +104,9 @@ export class OperatorComponent implements OnInit, AfterViewInit {
   }
   editRedirect(i, oc) {
     console.log(oc);
-    console.log(oc.fields[0].CurrencyName);
+    console.log(oc.fields[i].CurrencyName);
 
-    this.router.navigate(['edit',oc.fields[0].CurrencyName+" " + oc.fields[0].Country + " " +oc.fields[0].USD_Equivalent]);
+    this.router.navigate(['edit',oc.fields[i].CurrencyName+" " + oc.fields[i].Country + " " +oc.fields[i].USD_Equivalent]);
   }
   delete(i) {
     console.log("deleting: ",OperatorComponent.fields);
@@ -113,9 +135,10 @@ export class OperatorComponent implements OnInit, AfterViewInit {
       this.renderer.addClass(rc2, 'EDIT');
       this.renderer.addClass(rc2, "icons-delete-edit");
       rc2.OperatorComponent = OperatorComponent
+      rc2.index = i;
       rc2.addEventListener('click', (e) => {
         var x = e.currentTarget.OperatorComponent;
-        this.editRedirect(i, x);
+        this.editRedirect(e.currentTarget.index, x);
       });
       this.renderer.appendChild(rc, rc2);
 
@@ -201,9 +224,10 @@ export class OperatorComponent implements OnInit, AfterViewInit {
         this.renderer.addClass(rc2, 'EDIT');
         this.renderer.addClass(rc2, "icons-delete-edit")
         rc2.OperatorComponent = OperatorComponent
+        rc2.index = i;
         rc2.addEventListener('click', (e) => {
           var x = e.currentTarget.OperatorComponent;
-          this.editRedirect(i, x);
+          this.editRedirect(e.currentTarget.index, x);
         });
         this.renderer.appendChild(rc, rc2);
 
@@ -288,9 +312,10 @@ export class OperatorComponent implements OnInit, AfterViewInit {
             this.renderer.addClass(rc2, 'EDIT');
             this.renderer.addClass(rc2, "icons-delete-edit");
             rc2.OperatorComponent = OperatorComponent
+            rc2.index = i;
             rc2.addEventListener('click', (e) => {
               var x = e.currentTarget.OperatorComponent;
-              this.editRedirect(i, x);
+              this.editRedirect(e.currentTarget.index, x);
             });
             this.renderer.appendChild(rc, rc2);
 
@@ -367,9 +392,10 @@ export class OperatorComponent implements OnInit, AfterViewInit {
             this.renderer.addClass(rc2, 'EDIT');
             this.renderer.addClass(rc2, "icons-delete-edit");
             rc2.OperatorComponent = OperatorComponent
+            rc2.index = i;
             rc2.addEventListener('click', (e) => {
               var x = e.currentTarget.OperatorComponent;
-              this.editRedirect(i, x);
+              this.editRedirect(e.currentTarget.index, x);
             });
             this.renderer.appendChild(rc, rc2);
 
