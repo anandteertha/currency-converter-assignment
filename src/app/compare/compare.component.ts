@@ -17,6 +17,8 @@ export class CompareComponent implements OnInit {
     Country: string;
     USD_Equivalent: string;
   }
+  rc111: ElementRef;
+  rc222: ElementRef;
   got1 = false;
   got2 = false;
   val1 = 0;
@@ -41,12 +43,19 @@ export class CompareComponent implements OnInit {
     //alert()
     if(id == 1 || id == "1") {
       //console.log("here?");
+
+      if(this.rc111) {
+        this.main1.nativeElement.removeChild(this.rc111);
+      }
+
       this.got1 = true;
       this.val1 = Number(data.split(" ")[4])
       var recaptchaContainer = this.renderer.createElement('div');
       this.renderer.addClass(recaptchaContainer, 'currency');
       this.renderer.setProperty(recaptchaContainer, 'id', 'currency');
       this.renderer.appendChild(this.main1.nativeElement, recaptchaContainer);
+
+      this.rc111 = recaptchaContainer;
 
       var recaptchaContainer2 = this.renderer.createElement('div');
       this.renderer.addClass(recaptchaContainer2, 'icon-currency');
@@ -83,12 +92,17 @@ export class CompareComponent implements OnInit {
     }
     else {
       console.log("shey");
-      this.got2 = true
+      this.got2 = true;
+      if(this.rc222) {
+        this.main2.nativeElement.removeChild(this.rc222)
+      }
       this.val2 = Number(data.split(" ")[4])
       var recaptchaContainer = this.renderer.createElement('div');
       this.renderer.addClass(recaptchaContainer, 'currency');
       this.renderer.setProperty(recaptchaContainer, 'id', 'currency');
       this.renderer.appendChild(this.main2.nativeElement, recaptchaContainer);
+
+      this.rc222 = recaptchaContainer;
 
       var recaptchaContainer2 = this.renderer.createElement('div');
       this.renderer.addClass(recaptchaContainer2, 'icon-currency');
@@ -136,7 +150,7 @@ export class CompareComponent implements OnInit {
         var s: string = "Currency on left is equal to currency on right";
       }
       this.renderer.setProperty(recaptchaContainer6, 'innerHTML', s);
-      this.renderer.appendChild(recaptchaContainer, recaptchaContainer6);
+      this.renderer.appendChild(this.main1.nativeElement, recaptchaContainer6);
     }
     return [recaptchaContainer,data.split(" ")[4]]
   }
