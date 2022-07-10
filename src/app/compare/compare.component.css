@@ -143,3 +143,8 @@ hr {
   height: 70vh;
   float: right;
 }
+.displayMessage {
+  width: 100%;
+  float: left;
+  margin: 5%;
+}

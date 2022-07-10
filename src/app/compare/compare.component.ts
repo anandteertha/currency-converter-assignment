@@ -41,6 +41,8 @@ export class CompareComponent implements OnInit {
     //alert()
     if(id == 1 || id == "1") {
       //console.log("here?");
+      this.got1 = true;
+      this.val1 = Number(data.split(" ")[4])
       var recaptchaContainer = this.renderer.createElement('div');
       this.renderer.addClass(recaptchaContainer, 'currency');
       this.renderer.setProperty(recaptchaContainer, 'id', 'currency');
@@ -78,11 +80,11 @@ export class CompareComponent implements OnInit {
       USD_Equivalent = 'USD equivalent: ' + data.split(" ")[4]+ " " + data.split(" ")[5]
       this.renderer.setProperty(recaptchaContainer5, 'innerHTML', USD_Equivalent);
       this.renderer.appendChild(recaptchaContainer, recaptchaContainer5);
-
-
     }
     else {
       console.log("shey");
+      this.got2 = true
+      this.val2 = Number(data.split(" ")[4])
       var recaptchaContainer = this.renderer.createElement('div');
       this.renderer.addClass(recaptchaContainer, 'currency');
       this.renderer.setProperty(recaptchaContainer, 'id', 'currency');
@@ -121,7 +123,28 @@ export class CompareComponent implements OnInit {
       this.renderer.setProperty(recaptchaContainer5, 'innerHTML', USD_Equivalent);
       this.renderer.appendChild(recaptchaContainer, recaptchaContainer5);
     }
+    if(this.checkCompare()) {
+      var recaptchaContainer6 = this.renderer.createElement('div');
+      this.renderer.addClass(recaptchaContainer6, 'displayMessage');
+      if(this.val1 > this.val2) {
+        var s: string = "Currency on left is greater than currency on right";
+      }
+      else if (this.val1 < this.val2) {
+        var s: string = "Currency on left is lower than currency on right";
+      }
+      else {
+        var s: string = "Currency on left is equal to currency on right";
+      }
+      this.renderer.setProperty(recaptchaContainer6, 'innerHTML', s);
+      this.renderer.appendChild(recaptchaContainer, recaptchaContainer6);
+    }
     return [recaptchaContainer,data.split(" ")[4]]
+  }
+  checkCompare() {
+    if (this.got1 && this.got2) {
+      return true;
+    }
+    return false;
   }
   compareNow(data, id) {
     if (data.trim() != "" && this.get_1st(data.trim())) {
