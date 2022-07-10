@@ -19,7 +19,7 @@ export class ConsumerComponent implements OnInit, AfterViewInit {
   @ViewChild('mainDiv', {static: false}) main: ElementRef;
   @ViewChild('currency', {static: false}) currency: ElementRef;
   constructor(public AppComponent: AppComponent, private renderer: Renderer2, private route: ActivatedRoute, private router: Router) {
-    this.fields = OperatorComponent.fields;
+    this.fields = JSON.parse(localStorage.getItem('fields'));
   }
   keyDownEvent() {
 

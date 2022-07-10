@@ -64,6 +64,7 @@ export class OperatorComponent implements OnInit, AfterViewInit {
         USD_Equivalent: lst[2] + " $"
       };
       OperatorComponent.fields.push(x);
+      localStorage.setItem("fields", JSON.stringify(OperatorComponent.fields))
       this.added = true;
       this.router.navigate(['/operator']);
     }
@@ -79,12 +80,14 @@ export class OperatorComponent implements OnInit, AfterViewInit {
           OperatorComponent.fields[idx].CurrencyName = newCurrencyName;
           OperatorComponent.fields[idx].Country = newCountry;
           OperatorComponent.fields[idx].USD_Equivalent = newUSD;
+          localStorage.setItem("fields", JSON.stringify(OperatorComponent.fields));
           this.router.navigate(['/operator']);
         }
       }
     }
     else {
       this.added = false;
+      localStorage.setItem("fields", JSON.stringify(OperatorComponent.fields))
     }
   }
 
