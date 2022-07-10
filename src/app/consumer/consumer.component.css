@@ -13,6 +13,14 @@ body {
   overflow: auto;
   background-color: #253439;
 }
+.iconx {
+  margin-top: 2%;
+  width: 10vh;
+  height: 10vh;
+}
+.filter-sort {
+  margin-top: 1.5%;
+}
 .navbar a {
   float: left;
   color: white;

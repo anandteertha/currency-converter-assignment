@@ -2,7 +2,7 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { AppComponent } from "../app.component";
 import { ActivatedRoute, Router } from "@angular/router";
 import { Renderer2, RendererFactory2, ElementRef, ViewChild } from "@angular/core";
-
+import { OperatorComponent } from "../operator/operator.component";
 
 @Component({
   selector: 'app-consumer',
@@ -19,10 +19,61 @@ export class ConsumerComponent implements OnInit, AfterViewInit {
   @ViewChild('mainDiv', {static: false}) main: ElementRef;
   @ViewChild('currency', {static: false}) currency: ElementRef;
   constructor(public AppComponent: AppComponent, private renderer: Renderer2, private route: ActivatedRoute, private router: Router) {
-    this.fields = this.AppComponent.fields;
+    this.fields = OperatorComponent.fields;
   }
   keyDownEvent() {
 
+  }
+  sortedOnce = false;
+  sortIng() {
+    var x = []
+    var i = 0;
+    var y = this.fields.length;
+    if(!this.sortedOnce) {
+      while (x.length < y) {
+        x.push(this.getSmallest(i));
+        i += 1;
+      }
+      this.sortedOnce = true;
+    }
+    else {
+      while (x.length < y) {
+        x.push(this.getBiggest(i));
+        i += 1;
+      }
+      this.sortedOnce = false;
+    }
+    this.fields = x;
+    this.renderer.setProperty(this.main.nativeElement, 'innerHTML', " ");
+    this.displayAll()
+  }
+  getSmallest(i) {
+    var j = 0;
+    var min_val = Number(this.fields[0].USD_Equivalent.split(" ")[0]);
+    var idx = 0;
+    for(j=1;j<this.fields.length;j++) {
+      if(min_val > Number(this.fields[j].USD_Equivalent.split(" ")[0])) {
+        min_val = Number(this.fields[j].USD_Equivalent.split(" ")[0]);
+        idx = j;
+      }
+    }
+    var z = this.fields[idx];
+    this.fields.splice(idx, 1);
+    return z;
+  }
+  getBiggest(i) {
+    var j = 0;
+    var max_val = Number(this.fields[0].USD_Equivalent.split(" ")[0]);
+    var idx = 0;
+    for(j=1;j<this.fields.length;j++) {
+      if(max_val < Number(this.fields[j].USD_Equivalent.split(" ")[0])) {
+        max_val = Number(this.fields[j].USD_Equivalent.split(" ")[0]);
+        idx = j;
+      }
+    }
+    var z = this.fields[idx];
+    this.fields.splice(idx, 1);
+    return z;
   }
   searchList(val:string) {
     console.log(val);
@@ -167,7 +218,7 @@ export class ConsumerComponent implements OnInit, AfterViewInit {
     }
   }
 
-  ngAfterViewInit(): void {
+  displayAll() {
     let i = 0;
     console.log(this.main.nativeElement.attributes);
     for(i=0; i < this.fields.length; i++) {
@@ -210,6 +261,10 @@ export class ConsumerComponent implements OnInit, AfterViewInit {
       this.renderer.setProperty(recaptchaContainer5, 'innerHTML', USD_Equivalent);
       this.renderer.appendChild(recaptchaContainer, recaptchaContainer5);
     }
+  }
+
+  ngAfterViewInit(): void {
+    this.displayAll()
   }
 
 

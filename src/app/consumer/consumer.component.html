@@ -4,16 +4,21 @@
     <meta charset="utf-8">
     <link href='https://fonts.googleapis.com/css?family=Playfair Display' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Hammersmith One' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>CONSUMER</title>
   </head>
   <body>
     <div class="navbar">
       <div class="icon"></div>
-      <a class="active" href="#">VIEW</a>
+      <a class="active" routerLink="/consumer">VIEW</a>
       <a routerLink="/compare">COMPARE</a>
     </div>
     <hr>
     <input class="search" type="text" #searchBox (keydown)="keyDownEvent()" (keyup)="searchList(searchBox.value)" name="" value="" placeholder="search">
+    <div class="filter-sort">
+      <i #sort (click)="sortIng()" class="fa-solid fa-filter fa-2x"></i>
+    </div>
+    sort
     <div class="main" #mainDiv>
     </div>
   </body>
