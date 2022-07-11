@@ -4,16 +4,11 @@ body {
   font-family: 'Playfair Display';
   font-family: 'Hammersmith One';
   font-size: 20px;
+  background-color: #253439;
 }
 body {
   color: #D7E0EB;
 }
-/* hr {
-  height: 100%; /* you might need some positioning for this to work, see other questions about 100% height */
-/*  width: 0;
-  border: 1px solid black;
-} */
-
 .main {
   height: 100vh;
 }
@@ -22,12 +17,16 @@ body {
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-position: center;
+  width: 48%;
+  float: left;
 }
 .login {
   background-image: url("login.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-position: center;
+  width: 48%;
+  float: right;
 }
 .form_login {
   margin-top: 40%;
@@ -56,4 +55,11 @@ body {
 #buttons:active {
   margin: 6%;
   font-size: 20px;
+}
+.line {
+  height: 85vh;
+  float: left;
+  width: 0.5px;
+  margin-top:4%;
+  background-color: #D7E0EB;
 }

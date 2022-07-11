@@ -40,15 +40,6 @@ body {
 .navbar a.active {
   background-color: #243539;
 }
-
-/*  @media screen and (max-width: 500px) {
-  .navbar a {
-    float: none;
-    display: block;
-    width: 100%;
-    text-align: left; /* If you want the text to be left-aligned on small screens */
-/*  }
-} */
 .main {
   margin-top: 5%;
   margin-left: 5%;
@@ -124,30 +115,6 @@ body {
   margin-top: 0.5%;
   margin-left: 30%;
 }
-/*.gifs-left {
-  width: 15%;
-  height: 72%;
-  //border: 1px solid black;
-  float: left;
-  margin: 0.5%;
-  margin-top: 5%;
-  //background-image: url("currency.gif");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  background-position: center;
-}
-.gifs-right {
-  width: 15%;
-  height: 72%;
-  //border: 1px solid black;
-  float: right;
-  margin: 0.5%;
-  margin-top: 5%;
-  //background-image: url("currency-new.gif");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  background-position: center;
-}*/
 .icons-delete-edit {
   width: 20%;
   //border: 1px solid black;
@@ -225,4 +192,11 @@ hr {
   background-color: #D7E0EB;
   margin-top: 15%;
   margin-left: 5%;
+}
+.navbar .active {
+  color: white;
+  font-size: 20px;
+  background-color: #243539;
+  opacity: 0.8;
+  text-weight: bold;
 }

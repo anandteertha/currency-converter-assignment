@@ -148,3 +148,10 @@ hr {
   float: left;
   margin: 20%;
 }
+.navbar .active {
+  color: white;
+  font-size: 20px;
+  background-color: #243539;
+  opacity: 0.8;
+  text-weight: bold;
+}

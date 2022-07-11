@@ -190,7 +190,8 @@ export class OperatorComponent implements OnInit, AfterViewInit {
         if(j == e.currentTarget.index) {
           this.main.nativeElement.removeChild(this.main.nativeElement.childNodes[j]);
           this.renderer.setProperty(this.main.nativeElement, 'innerHTML', " ");
-          this.displayAll()
+          this.displayAll();
+          alert("Item has been successfully deleted!");
           break;
         }
       }

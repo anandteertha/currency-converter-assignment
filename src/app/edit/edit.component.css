@@ -137,16 +137,27 @@ hr {
   border-radius: 2vh;
   padding-left: 2vh;
 }
-#buttons {
+#cancel {
   background-color: #D7E0EB;
   color: #253439;
   width: 34%;
 }
-#buttons:hover {
+#submit {
+  background-color: #D7E0EB;
+  color: #253439;
+  width: 34%;
+}
+#cancel:hover {
   width: 36%;
   border: 1px dotted #203050;
 }
-#buttons:active {
-  margin: 6%;
+#cancel:active {
+  font-size: 20px;
+}
+#submit:hover {
+  width: 36%;
+  border: 1px dotted #203050;
+}
+#submit:active {
   font-size: 20px;
 }
