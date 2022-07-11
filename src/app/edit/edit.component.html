@@ -21,6 +21,7 @@
             <input  class="inputs" type="text" name="currency" value="" placeholder="Currency Name" required [(ngModel)]="currency">
             <input  class="inputs" type="text" name="value" value="" placeholder="USD equivalent" required [(ngModel)]="value">
             <input class="inputs" id="buttons" type="submit" value="EDIT USER">
+            <input class="inputs" id="buttons" type="submit" (click)="cancelClick()" value="CANCEL">
           </form>
         </div>
       </div>

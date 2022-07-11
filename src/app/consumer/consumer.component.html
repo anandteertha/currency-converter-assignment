@@ -14,7 +14,7 @@
       <a routerLink="/compare">COMPARE</a>
     </div>
     <hr>
-    <input class="search" type="text" #searchBox (keydown)="keyDownEvent()" (keyup)="searchList(searchBox.value)" name="" value="" placeholder="search">
+    <input class="search" type="text" #searchBox (keyup)="searchList(searchBox.value)" name="" value="" placeholder="search">
     <div class="filter-sort">
       <i #sort (click)="sortIng()" class="fa-solid fa-filter fa-2x"></i>
     </div>

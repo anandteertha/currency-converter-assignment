@@ -3,7 +3,6 @@ import { AppComponent } from "../app.component";
 import {Injectable, Renderer2, RendererFactory2, ViewChild, ElementRef, Input} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 
-
 @Component({
   selector: 'app-compare',
   templateUrl: './compare.component.html',
@@ -17,129 +16,98 @@ export class CompareComponent implements OnInit {
     Country: string;
     USD_Equivalent: string;
   }
-  rc111: ElementRef;
-  rc222: ElementRef;
-  got1 = false;
-  got2 = false;
-  val1 = 0;
-  val2 = 0;
+  referenceMain1: ElementRef;
+  referenceMain2: ElementRef;
+  referenceDisplay: ElementRef;
+  got1: boolean = false;
+  got2: boolean = false;
+  val1: number = 0;
+  val2: number = 0;
   first_word_list = []
-  get_1st(data) {
-    let i = 0
-    //alert(data)
+  get_1st(data: string): boolean {
+    let i:number = 0
     for(i=0;i<this.fields.length;i++) {
-      let x = data.split(" ")[0]+" "+data.split(" ")[1]+" "+data.split(" ")[2]
-      let y = this.fields[i].CurrencyName
-      //alert("x = "+x)
-      //alert("y = "+y)
-      if(x == y) {
+      let inputCurrencyName = data.split(" ")[0]+" "+data.split(" ")[1]+" "+data.split(" ")[2]
+      let currentCurrencyName = this.fields[i].CurrencyName
+      if(inputCurrencyName == currentCurrencyName) {
         return true
       }
     }
     return false
   }
+  createCurrency(parent: ElementRef): ElementRef {
+    var currency: ElementRef = this.renderer.createElement('div');
+    this.renderer.addClass(currency, 'currency');
+    this.renderer.setProperty(currency, 'id', 'currency');
+    this.renderer.appendChild(parent, currency);
+    return currency;
+  }
+  createIcons(parent: ElementRef) : ElementRef {
+    var icons: ElementRef = this.renderer.createElement('div');
+    this.renderer.addClass(icons, 'icon-currency');
+    this.renderer.appendChild(parent, icons);
+    return icons;
+  }
+  createCurrencyName(parent: ElementRef, data: string) : ElementRef {
+    var currentCurrencyName: ElementRef = this.renderer.createElement('div');
+    var Name: string;
+    this.renderer.addClass(currentCurrencyName, 'currency-name');
+    Name = 'Name: ' + data.split(" ")[0]+" "+data.split(" ")[1]+" "+data.split(" ")[2];
+    this.renderer.setProperty(currentCurrencyName, 'innerHTML', Name);
+    this.renderer.appendChild(parent, currentCurrencyName);
+    return currentCurrencyName;
+  }
+  createCurrencyCountry(parent: ElementRef, data: string): ElementRef {
+    var Country: string;
+    var currentCurrencyCountry: ElementRef = this.renderer.createElement('div');
+    this.renderer.addClass(currentCurrencyCountry, 'currency-country');
+    Country = 'Country: ' + data.split(" ")[3];
+    this.renderer.setProperty(currentCurrencyCountry, 'innerHTML', Country);
+    this.renderer.appendChild(parent, currentCurrencyCountry);
+    return currentCurrencyCountry;
+  }
+  createCurrencyValue(parent: ElementRef, data: string): ElementRef {
+    var currentCurrencyValue = this.renderer.createElement('div');
+    var USD_Equivalent: string;
+    this.renderer.addClass(currentCurrencyValue, 'currency-value');
+    USD_Equivalent = 'USD equivalent: ' + data.split(" ")[4]+ " " + data.split(" ")[5]
+    this.renderer.setProperty(currentCurrencyValue, 'innerHTML', USD_Equivalent);
+    this.renderer.appendChild(parent, currentCurrencyValue);
+    return currentCurrencyValue;
+  }
+  displayFacade(parent: ElementRef, data: string) {
+    var currency = this.createCurrency(parent)
+    var icons = this.createIcons(currency);
+    var currencyNameDiv = this.createCurrencyName(currency, data);
+    var currencyCountryDiv = this.createCurrencyCountry(currency, data);
+    var currencyValueDiv = this.createCurrencyValue(currency, data);
+    return currency;
+  }
   display(data, id) {
-    //console.log("...reached");
-    //alert()
     if(id == 1 || id == "1") {
-      //console.log("here?");
-
-      if(this.rc111) {
-        this.main1.nativeElement.removeChild(this.rc111);
+      if(this.referenceMain1) {
+        this.main1.nativeElement.removeChild(this.referenceMain1);
       }
-
       this.got1 = true;
       this.val1 = Number(data.split(" ")[4])
-      var recaptchaContainer = this.renderer.createElement('div');
-      this.renderer.addClass(recaptchaContainer, 'currency');
-      this.renderer.setProperty(recaptchaContainer, 'id', 'currency');
-      this.renderer.appendChild(this.main1.nativeElement, recaptchaContainer);
-
-      this.rc111 = recaptchaContainer;
-
-      var recaptchaContainer2 = this.renderer.createElement('div');
-      this.renderer.addClass(recaptchaContainer2, 'icon-currency');
-      this.renderer.appendChild(recaptchaContainer, recaptchaContainer2);
-
-
-      var recaptchaContainer3 = this.renderer.createElement('div');
-      this.renderer.addClass(recaptchaContainer3, 'currency-name');
-
-
-      var Name: string;
-      Name = 'Name: ' + data.split(" ")[0]+" "+data.split(" ")[1]+" "+data.split(" ")[2]
-      console.log(Name);
-      this.renderer.setProperty(recaptchaContainer3, 'innerHTML', Name);
-      this.renderer.appendChild(recaptchaContainer, recaptchaContainer3);
-
-
-      var Country: string;
-      var recaptchaContainer4 = this.renderer.createElement('div');
-      this.renderer.addClass(recaptchaContainer4, 'currency-country');
-      Country = 'Country: ' + data.split(" ")[3];
-      console.log(Country);
-
-      this.renderer.setProperty(recaptchaContainer4, 'innerHTML', Country);
-      this.renderer.appendChild(recaptchaContainer, recaptchaContainer4);
-
-
-      var recaptchaContainer5 = this.renderer.createElement('div');
-      this.renderer.addClass(recaptchaContainer5, 'currency-value');
-      var USD_Equivalent: string;
-      USD_Equivalent = 'USD equivalent: ' + data.split(" ")[4]+ " " + data.split(" ")[5]
-      this.renderer.setProperty(recaptchaContainer5, 'innerHTML', USD_Equivalent);
-      this.renderer.appendChild(recaptchaContainer, recaptchaContainer5);
+      var currency: ElementRef = this.displayFacade(this.main1.nativeElement, data);
+      this.referenceMain1 = currency;
     }
     else {
-      console.log("shey");
       this.got2 = true;
-      if(this.rc222) {
-        this.main2.nativeElement.removeChild(this.rc222)
+      if(this.referenceMain2) {
+        this.main2.nativeElement.removeChild(this.referenceMain2)
       }
-      this.val2 = Number(data.split(" ")[4])
-      var recaptchaContainer = this.renderer.createElement('div');
-      this.renderer.addClass(recaptchaContainer, 'currency');
-      this.renderer.setProperty(recaptchaContainer, 'id', 'currency');
-      this.renderer.appendChild(this.main2.nativeElement, recaptchaContainer);
-
-      this.rc222 = recaptchaContainer;
-
-      var recaptchaContainer2 = this.renderer.createElement('div');
-      this.renderer.addClass(recaptchaContainer2, 'icon-currency');
-      this.renderer.appendChild(recaptchaContainer, recaptchaContainer2);
-
-
-      var recaptchaContainer3 = this.renderer.createElement('div');
-      this.renderer.addClass(recaptchaContainer3, 'currency-name');
-
-
-      var Name: string;
-      Name = 'Name: ' + data.split(" ")[0]+" "+data.split(" ")[1]+" "+data.split(" ")[2];
-      console.log(Name);
-      this.renderer.setProperty(recaptchaContainer3, 'innerHTML', Name);
-      this.renderer.appendChild(recaptchaContainer, recaptchaContainer3);
-
-
-      var Country: string;
-      var recaptchaContainer4 = this.renderer.createElement('div');
-      this.renderer.addClass(recaptchaContainer4, 'currency-country');
-      Country = 'Country: ' + data.split(" ")[3];
-      console.log(Country);
-
-      this.renderer.setProperty(recaptchaContainer4, 'innerHTML', Country);
-      this.renderer.appendChild(recaptchaContainer, recaptchaContainer4);
-
-
-      var recaptchaContainer5 = this.renderer.createElement('div');
-      this.renderer.addClass(recaptchaContainer5, 'currency-value');
-      var USD_Equivalent: string;
-      USD_Equivalent = 'USD equivalent: ' + data.split(" ")[4] +" "+ data.split(" ")[5]
-      this.renderer.setProperty(recaptchaContainer5, 'innerHTML', USD_Equivalent);
-      this.renderer.appendChild(recaptchaContainer, recaptchaContainer5);
+      this.val2 = Number(data.split(" ")[4]);
+      var currency: ElementRef = this.displayFacade(this.main2.nativeElement, data);
+      this.referenceMain2 = currency;
     }
     if(this.checkCompare()) {
-      var recaptchaContainer6 = this.renderer.createElement('div');
-      this.renderer.addClass(recaptchaContainer6, 'displayMessage');
+      if(this.referenceDisplay) {
+        this.main1.nativeElement.removeChild(this.referenceDisplay);
+      }
+      var displayCompare = this.renderer.createElement('div');
+      this.renderer.addClass(displayCompare, 'displayMessage');
       if(this.val1 > this.val2) {
         var s: string = "Currency on left is greater than currency on right";
       }
@@ -149,12 +117,13 @@ export class CompareComponent implements OnInit {
       else {
         var s: string = "Currency on left is equal to currency on right";
       }
-      this.renderer.setProperty(recaptchaContainer6, 'innerHTML', s);
-      this.renderer.appendChild(this.main1.nativeElement, recaptchaContainer6);
+      this.renderer.setProperty(displayCompare, 'innerHTML', s);
+      this.renderer.appendChild(this.main1.nativeElement, displayCompare);
+      this.referenceDisplay = displayCompare;
     }
-    return [recaptchaContainer,data.split(" ")[4]]
+    return [currency, data.split(" ")[4]]
   }
-  checkCompare() {
+  checkCompare(): boolean {
     if (this.got1 && this.got2) {
       return true;
     }
@@ -162,18 +131,7 @@ export class CompareComponent implements OnInit {
   }
   compareNow(data, id) {
     if (data.trim() != "" && this.get_1st(data.trim())) {
-      //display
-      let x = this.display(data, id)
-      /*let recaptchaContainer = x[0];
-      let d = x[1];
-      d = Number(d);
-      if(id == 1 && this.got2) {
-        var recaptchaContainer6 = this.renderer.createElement('div');
-        let s: string;
-        if(d>val2){
-          this.renderer.setProperty(recaptchaContainer6, 'innerHTML', "");
-        }
-      }*/
+      let x = this.display(data, id);
     }
     else {
       //display curreny not found.. sorry!!
@@ -186,8 +144,5 @@ export class CompareComponent implements OnInit {
       this.router.navigate(['/operator'])
     }
   }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

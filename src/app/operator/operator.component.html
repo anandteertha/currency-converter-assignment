@@ -19,7 +19,7 @@
     <div class="gifs-left">
 
     </div>
-    <input class="search" type="text" #searchBox (keydown)="keyDownEvent()" (keyup)="searchList(searchBox.value)" name="" value="" placeholder="search"><!-- <input class="search-button" type="submit" onclick="search" name="" value="SEARCH">-->
+    <input class="search" type="text" #searchBox (keyup)="searchList(searchBox.value)" name="" value="" placeholder="search"><!-- <input class="search-button" type="submit" onclick="search" name="" value="SEARCH">-->
     <div class="filter-sort">
       <i #sort (click)="sortIng()" class="fa-solid fa-filter fa-2x"></i>
     </div>

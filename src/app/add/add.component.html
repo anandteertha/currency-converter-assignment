@@ -11,8 +11,7 @@
       <div class="icon"></div>
       <a class="active" routerLink="/operator">VIEW</a>
       <a routerLink="/add">ADD</a>
-    </div>
-    <hr>
+    </div><hr>
     <div class="main" #mainDiv>
       <div class="login" style="float: left; width: 100%; height:100%">
         <div class="form_login">
@@ -21,10 +20,10 @@
             <input class="inputs" type="text" name="currency" value="" placeholder="Currency Name" required ngModel>
             <input class="inputs" type="text" name="value" value="" placeholder="USD equivalent" required ngModel>
             <input class="inputs" id="buttons" type="submit" value="ADD USER">
+            <input class="inputs" id="buttons" type="submit" (click)="cancelClick()" value="CANCEL">
           </form>
         </div>
       </div>
     </div>
-
   </body>
 </html>

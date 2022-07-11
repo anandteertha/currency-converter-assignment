@@ -77,9 +77,10 @@ hr {
 #buttons {
   background-color: #D7E0EB;
   color: #253439;
+  width: 33%;
 }
 #buttons:hover {
-  width: 72%;
+  width: 36%;
   border: 1px dotted #203050;
 }
 #buttons:active {
