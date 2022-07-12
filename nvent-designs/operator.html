@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link href='https://fonts.googleapis.com/css?family=Playfair Display' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Hammersmith One' rel='stylesheet'>
+    <title>OPERATOR</title>
+    <style media="screen">
+
+      html, body {
+        margin:0px;
+        height:100%;
+        font-family: 'Playfair Display';
+        font-family: 'Hammersmith One';
+        font-size: 20px;
+      }
+      .line {
+        width: 80%;
+        margin: 2%;
+        height: 0.1vh;
+        float: left;
+        margin-bottom: 5%;
+        margin-left: 10%;
+        margin-right: 10%;
+        background-color: #D7E0EB;
+      }
+      body {
+        color: #D7E0EB;
+        background-color: #253439;
+      }
+      .navbar {
+        width: 100%;
+        overflow: auto;
+        background-color: #253439;
+      }
+      .navbar a {
+        float: left;
+        color: white;
+        text-decoration: none;
+        width: 22%;
+        text-align: center;
+        padding-top: 2%;
+        padding-bottom: 2%;
+        opacity: 0.3;
+      }
+      .navbar a:hover {
+          color: white;
+          font-size: 25px;
+          background-color: #243539;
+          opacity: 1;
+      }
+      .navbar:hover {
+        opacity: 1;
+        text-weight: bold;
+      }
+      .navbar a.active {
+        background-color: #243539;
+      }
+
+    /*  @media screen and (max-width: 500px) {
+        .navbar a {
+          float: none;
+          display: block;
+          width: 100%;
+          text-align: left; /* If you want the text to be left-aligned on small screens */
+      /*  }
+      } */
+      .main {
+        margin-top: 5%;
+        margin-left: 5%;
+        margin-right: 5%;
+        height: 72%;
+        width: 80%;
+        border: 1px solid #D7E0EB;
+        border-opacity: 0.2;
+        overflow-y: auto;
+        padding-left: 2%;
+        padding-right: 2%;
+        padding-bottom: 5vh;
+      }
+      .search {
+        margin-top: 1%;
+        margin-left: 25%;
+        margin-right: 2%;
+        margin-bottom: 2%;
+        width: 45%;
+        border: 1px solid #D7E0EB;
+        border-opacity: 0.2;
+        padding-left: 2%;
+        padding-right: 2%;
+        height: 6%;
+        float: left;
+        border-radius: 6vh;
+      }
+      .currency {
+        width: 96%;
+        height: 35%;
+        //border: 1px solid black;
+        margin-top: 2%;
+        padding: 2%;
+        float: left;
+      }
+      .icon-currency {
+        width: 20%;
+        height: 100%;
+        //border: 1px solid black;
+        margin-right: 1%;
+        float: left;
+        background-image: url("currency.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-position: center;
+      }
+      .currency-name, .currency-country, .currency-value {
+        width: 70%;
+        height: 30%;
+        //border: 1px solid black;
+        float: left;
+        margin-top: 0.5%;
+      }
+      /*.gifs-left {
+        width: 15%;
+        height: 72%;
+        //border: 1px solid black;
+        float: left;
+        margin: 0.5%;
+        margin-top: 5%;
+        //background-image: url("currency.gif");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-position: center;
+      }
+      .gifs-right {
+        width: 15%;
+        height: 72%;
+        //border: 1px solid black;
+        float: right;
+        margin: 0.5%;
+        margin-top: 5%;
+        //background-image: url("currency-new.gif");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-position: center;
+      }*/
+      .icons-delete-edit {
+        width: 8%;
+        height: 100%;
+        //border: 1px solid black;
+        float: right;
+        margin-top: 0.5%;
+        //background-color: #306967;
+        fill: white;
+      }
+      .EDIT {
+        width: 100%;
+        height: 50%;
+        float: left;
+        background-image: url("edit.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-bottom: 1%;
+        fill: white;
+      }
+      .DELETE {
+        width: 100%;
+        height: 50%;
+        float: left;
+        background-image: url("delete.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        color: white;
+      }
+      .EDIT:hover {
+        background-image: url("big-edit.svg");
+      }
+      .DELETE:hover {
+        background-image: url("big-delete.svg");
+      }
+      .search-button {
+        width: 10%;
+        height: 20%
+        margin-left: 2%;
+        margin-top: 2%;
+        padding: 0.4%;
+        border-radius: 2vh;
+      }
+      .search-button {
+        background-color: #D7E0EB;
+        color: #253439;
+        font-weight: bold;
+      }
+      .search-button:hover {
+        width: 12%;
+        font-size: 18px;
+      }
+      .search-button:active {
+        font-size: 12px;
+      }
+      .icon {
+        width: 12%;
+        float: left;
+        background-image: url("CurrencyLogo.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        padding-top: 2%;
+        padding-bottom: 2%;
+      }
+      hr {
+        margin-left: 2%;
+        margin-right: 2%;
+        margin-bottom: 0.5%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="icon"></div>
+      <a class="active" href="#">VIEW</a>
+      <a href="#">ADD</a>
+      <a href="#">EDIT</a>
+      <a href="#">DELETE</a>
+    </div>
+    <hr>
+    <div class="gifs-left">
+
+    </div>
+    <input class="search" type="text" name="" value="" placeholder="search"><!-- <input class="search-button" type="submit" onclick="search" name="" value="SEARCH">-->
+    <div class="filter-sort">
+
+    </div>
+    <div class="gifs-right">
+
+    </div>
+    <div class="main">
+      <div class="currency">
+        <div class="icon-currency">
+
+        </div>
+        <div class="currency-name">
+          Name: Indian Rupees (INR)
+        </div>
+        <div class="icons-delete-edit">
+          <div class="EDIT">
+
+          </div>
+          <div class="DELETE">
+
+          </div>
+        </div>
+        <div class="currency-country">
+          Country: India
+
+        </div>
+        <div class="currency-value">
+          USD equivalent:   0.013 $
+
+        </div>
+      </div>
+      <div class="line">
+
+      </div>
+      <div class="currency">
+        <div class="icon-currency">
+
+        </div>
+        <div class="currency-name">
+          Name: Indian Rupees (INR)
+        </div>
+        <div class="icons-delete-edit">
+          <div class="EDIT">
+
+          </div>
+          <div class="DELETE">
+
+          </div>
+        </div>
+        <div class="currency-country">
+          Country: India
+
+        </div>
+        <div class="currency-value">
+          USD equivalent:   0.013 $
+
+        </div>
+      </div>
+      <div class="currency">
+        <div class="icon-currency">
+
+        </div>
+        <div class="currency-name">
+          Name: Indian Rupees (INR)
+        </div>
+        <div class="icons-delete-edit">
+          <div class="EDIT">
+
+          </div>
+          <div class="DELETE">
+
+          </div>
+        </div>
+        <div class="currency-country">
+          Country: India
+
+        </div>
+        <div class="currency-value">
+          USD equivalent:   0.013 $
+
+        </div>
+      </div>
+      <div class="currency">
+        <div class="icon-currency">
+
+        </div>
+        <div class="currency-name">
+          Name: Indian Rupees (INR)
+        </div>
+        <div class="icons-delete-edit">
+          <div class="EDIT">
+
+          </div>
+          <div class="DELETE">
+
+          </div>
+        </div>
+        <div class="currency-country">
+          Country: India
+
+        </div>
+        <div class="currency-value">
+          USD equivalent:   0.013 $
+
+        </div>
+      </div>
+      <div class="currency">
+        <div class="icon-currency">
+
+        </div>
+        <div class="currency-name">
+          Name: Indian Rupees (INR)
+        </div>
+        <div class="icons-delete-edit">
+          <div class="EDIT">
+
+          </div>
+          <div class="DELETE">
+
+          </div>
+        </div>
+        <div class="currency-country">
+          Country: India
+
+        </div>
+        <div class="currency-value">
+          USD equivalent:   0.013 $
+
+        </div>
+
+      </div>
+
+    </div>
+  </body>
+</html>

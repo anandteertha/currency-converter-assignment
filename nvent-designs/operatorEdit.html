@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>OPERATOR</title>
+    <link href='https://fonts.googleapis.com/css?family=Playfair Display' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Hammersmith One' rel='stylesheet'>
+    <style media="screen">
+      html, body {
+        margin:0px;
+        height:80%;
+        font-family: 'Playfair Display';
+        font-family: 'Hammersmith One';
+        font-size: 20px;
+      }
+      body {
+        color: #D7E0EB;
+        background-color: #253439;
+      }
+      .form-add {
+        margin-top: 5%;
+        margin-left: 20%;
+      }
+      .inputs {
+        margin: 2%;
+        width: 60%;
+        height: 5vh;
+        border-radius: 2vh;
+        padding-left: 2vh;
+      }
+      #buttons {
+        background-color: #D7E0EB;
+        color: #253439;
+        width: 50%;
+        margin-left: 7%;
+      }
+      #buttons:hover {
+        width: 52%;
+        border: 1px dotted #203050;
+        font-weight: bold;
+      }
+      #buttons:active {
+        margin-left: 5%;
+        width: 56%;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-add">
+      <input class="inputs" type="text" name="" value="" placeholder="CURRENCY NAME">
+      <input class="inputs"type="text" name="" value="" placeholder="CURRENCY ORIGIN OR COUNTRY">
+      <input class="inputs"type="text" name="" value="" placeholder="CURRENCY VALUE AGAINST USD">
+      <input id="buttons" class="inputs" type="submit" onclick="editCurrency();" name="" value="EDIT CURRENCY">
+    </div>
+  </body>
+</html>

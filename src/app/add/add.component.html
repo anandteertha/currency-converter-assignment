@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link href='https://fonts.googleapis.com/css?family=Playfair Display' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Hammersmith One' rel='stylesheet'>
+    <title>ADD CUURENCY</title>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="icon"></div>
+      <a routerLink="/operator">VIEW</a>
+      <a class="active" routerLink="/add">ADD</a>
+    </div><hr>
+    <div class="main" #mainDiv>
+      <div class="login" style="float: left; width: 100%; height:100%">
+        <div class="form_login">
+          <form #addForm="ngForm" (ngSubmit)="addVal(addForm.value)" >
+            <input class="inputs" type="text" name="country" value="" placeholder="Country Name" required ngModel>
+            <input class="inputs" type="text" name="currency" value="" placeholder="Currency Name" required ngModel>
+            <input class="inputs" type="text" name="value" value="" placeholder="USD equivalent" required ngModel>
+            <input class="inputs submit" id="submit" type="submit" value="ADD USER">
+            <input class="inputs cancel" id="submit" type="submit" (click)="cancelClick()" value="CANCEL">
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

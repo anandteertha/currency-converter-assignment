@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link href='https://fonts.googleapis.com/css?family=Playfair Display' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Hammersmith One' rel='stylesheet'>
+    <title>COMPARE</title>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="icon"></div>
+      <a routerLink="/consumer">VIEW</a>
+      <a class="active" routerLink="/compare">COMPARE</a>
+    </div>
+    <hr>
+    <!--<input class="search" type="text" #searchBox (keydown)="keyDownEvent()" (keyup)="searchList(searchBox.value)" name="" value="" placeholder="search">-->
+    <!--<div class="main" #mainDiv>
+    </div>-->
+    <div #mainDiv1 class="compare1">
+      <datalist id="c1">
+        <option *ngFor="let item of this.fields">
+          {{item.CurrencyName}}
+          {{item.Country}}
+          {{item.USD_Equivalent}}
+        </option>
+      </datalist>
+      <input #compare1 class="search" (keyup.enter)="compareNow(compare1.value,1)"  placeholder="compare 1"  autoComplete="on" list="c1"/>
+    </div>
+    <div class="line">
+
+    </div>
+    <div #mainDiv2 class="compare2">
+      <datalist id="c2">
+        <option *ngFor="let item of this.fields">
+          {{item.CurrencyName}}
+          {{item.Country}}
+          {{item.USD_Equivalent}}
+        </option>
+      </datalist>
+      <input #compare2 class="search" (keyup.enter)="compareNow(compare2.value,2)" placeholder="compare 2"  autoComplete="on" list="c2"/>
+    </div>
+  </body>
+</html>

@@ -4,15 +4,33 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import {FormsModule} from '@angular/forms';
+import { LoginComponentComponent } from './login-component/login-component.component';
+import { OperatorComponent } from './operator/operator.component';
+import { AddComponent } from './add/add.component';
+import { ConsumerComponent } from './consumer/consumer.component';
+import { CompareComponent } from './compare/compare.component';
+import { EditComponent } from './edit/edit.component';
+import { ErrorComponent } from './error/error.component'
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponentComponent,
+    OperatorComponent,
+    AddComponent,
+    ConsumerComponent,
+    CompareComponent,
+    EditComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [AppComponent],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
